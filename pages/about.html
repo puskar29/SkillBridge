@@ -10,8 +10,8 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="src/style.css" />
-    <title>SkillBridge — Contact</title>
+    <link rel="stylesheet" href="/src/style.css" />
+    <title>SkillBridge — About Us</title>
   </head>
   <body class="scroll-smooth bg-white font-sans text-darkblack antialiased">
     <div class="relative overflow-hidden">
@@ -23,26 +23,26 @@
             <img
               src="/src/assets/logos/Skill-logo.svg"
               alt="SkillBridge logo"
-              class="h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105 lg:h-16"
+              class="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105 lg:h-14"
             />
-            <span class="hidden font-poppins text-[20px] font-bold tracking-tight text-darkblack md:block lg:text-[22px]">
+            <span class="hidden font-poppins text-[20px] font-bold tracking-tight text-darkblack xl:block lg:text-[22px]">
               Skill<span class="text-brand-dark">Bridge</span>
             </span>
           </a>
 
-          <nav class="hidden items-center gap-7 text-[15px] font-semibold text-darkblack lg:flex xl:gap-9 xl:text-[16px]">
+          <nav class="hidden items-center gap-4 text-[15px] font-semibold text-darkblack lg:flex lg:gap-5 xl:gap-6">
             <a href="index.html" class="nav-link">Home</a>
             <a href="opportunities.html" class="nav-link">Opportunities</a>
             <a href="workshops.html" class="nav-link">Workshops</a>
             <a href="internships.html" class="nav-link">Internships</a>
             <a href="scholarships.html" class="nav-link">Scholarships</a>
-            <a href="about.html" class="nav-link">About Us</a>
-            <a href="contact.html" class="nav-link active">Contact</a>
+            <a href="about.html" class="nav-link active">About Us</a>
+            <a href="contact.html" class="nav-link">Contact</a>
           </nav>
 
           <div class="flex items-center gap-2.5 xl:gap-4">
             <div
-              class="hidden h-[46px] w-[220px] items-center justify-between rounded-full bg-softgrey/70 px-5 transition focus-within:bg-white focus-within:ring-2 focus-within:ring-brand/40 xl:flex"
+              class="hidden h-[44px] w-[200px] items-center justify-between rounded-full bg-softgrey/70 px-5 transition focus-within:bg-white focus-within:ring-2 focus-within:ring-brand/40 2xl:flex"
             >
               <span class="text-[13px] font-medium text-darkgrey">Search opportunities</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="h-4.5 w-4.5 text-darkgrey">
@@ -52,16 +52,48 @@
             </div>
             <a
               href="#"
-              class="flex h-[46px] w-[92px] items-center justify-center rounded-full border border-darkblack/20 text-[15px] font-semibold text-darkblack transition hover:-translate-y-0.5 hover:border-brand hover:text-brand xl:text-[16px]"
+              class="flex h-[44px] w-[84px] items-center justify-center rounded-full border border-darkblack/20 text-[15px] font-semibold text-darkblack transition hover:-translate-y-0.5 hover:border-brand hover:text-brand"
             >
               Login
             </a>
             <a
               href="#"
-              class="flex h-[46px] w-[108px] items-center justify-center rounded-full bg-gradient-to-r from-brand to-brand-dark text-[15px] font-semibold text-white shadow-lg shadow-brand/30 transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-brand/40 xl:text-[16px]"
+              class="flex h-[44px] w-[100px] items-center justify-center rounded-full bg-gradient-to-r from-brand to-brand-dark text-[15px] font-semibold text-white shadow-lg shadow-brand/30 transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-brand/40"
             >
               Sign Up
             </a>
+
+            <button
+              type="button"
+              id="menu-toggle"
+              aria-label="Open menu"
+              aria-expanded="false"
+              class="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 text-darkblack transition hover:border-brand hover:text-brand lg:hidden"
+            >
+              <svg id="menu-open-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-6 w-6">
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+              <svg id="menu-close-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hidden h-6 w-6">
+                <path d="M6 6l12 12M18 6L6 18" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- mobile menu -->
+        <div id="mobile-menu" class="hidden border-t border-slate-100 bg-white px-6 pt-4 pb-6 lg:hidden">
+          <nav class="flex flex-col gap-1 text-[15px] font-semibold text-darkblack">
+            <a href="index.html" class="nav-link rounded-lg px-3 py-2.5">Home</a>
+            <a href="opportunities.html" class="nav-link rounded-lg px-3 py-2.5">Opportunities</a>
+            <a href="workshops.html" class="nav-link rounded-lg px-3 py-2.5">Workshops</a>
+            <a href="internships.html" class="nav-link rounded-lg px-3 py-2.5">Internships</a>
+            <a href="scholarships.html" class="nav-link rounded-lg px-3 py-2.5">Scholarships</a>
+            <a href="about.html" class="nav-link active rounded-lg bg-avaborder px-3 py-2.5">About Us</a>
+            <a href="contact.html" class="nav-link rounded-lg px-3 py-2.5">Contact</a>
+          </nav>
+          <div class="mt-5 flex items-center gap-3">
+            <a href="#" class="flex h-11 flex-1 items-center justify-center rounded-full border border-darkblack/20 text-[15px] font-semibold text-darkblack transition hover:border-brand hover:text-brand">Login</a>
+            <a href="#" class="flex h-11 flex-1 items-center justify-center rounded-full bg-gradient-to-r from-brand to-brand-dark text-[15px] font-semibold text-white shadow-lg shadow-brand/30">Sign Up</a>
           </div>
         </div>
       </header>
@@ -74,141 +106,75 @@
         </div>
 
         <div class="mx-auto max-w-[1600px] px-6 py-16 lg:px-12 lg:py-24">
-          <div class="w-fit rounded-3xl bg-avaborder px-4 py-2 text-[18px] font-bold text-linkblue">CONTACT</div>
+          <div class="w-fit rounded-3xl bg-avaborder px-4 py-2 text-[18px] font-bold text-linkblue">ABOUT US</div>
           <h1 class="mt-4 font-poppins text-[38px] leading-[1.25] font-bold tracking-tight lg:text-[52px]">
-            Let&rsquo;s <span class="text-brand-dark">Talk</span>
+            Building Futures,<br />One <span class="text-brand-dark">Learner</span> at a Time
           </h1>
           <p class="mt-6 max-w-[620px] font-poppins text-[16px] leading-[1.7] font-medium text-darkblack/80 lg:text-[17px]">
-            Questions, partnerships, or just want to say hi? We&rsquo;d love to
-            hear from you. Reach out and our team will get back to you within a day.
+            SkillBridge connects students with the skills, opportunities, and
+            communities they need to grow. Our mission is simple: make learning
+            accessible for everyone.
           </p>
         </div>
       </main>
 
-      <!-- contact -->
+      <!-- stats -->
       <section class="border-t border-slate-100 bg-gradient-to-b from-white to-avaborder/40">
-        <div class="mx-auto grid max-w-[1600px] gap-12 px-6 py-12 lg:grid-cols-2 lg:px-12 lg:py-16">
-          <!-- info -->
-          <div class="flex flex-col gap-6">
-            <div class="flex items-center gap-4 rounded-2xl border border-slate-100 bg-white p-6 shadow-[0_5px_10px_0_rgba(49,49,49,0.10)]">
-              <div class="flex h-12 w-12 items-center justify-center rounded-full bg-avaborder text-brand">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-5 w-5">
-                  <rect x="3" y="5" width="18" height="14" rx="2" />
-                  <path d="m3 7 9 6 9-6" />
-                </svg>
-              </div>
-              <div>
-                <h3 class="font-poppins text-[18px] font-semibold text-darkblack">Email</h3>
-                <p class="text-[15px] font-medium text-darkgrey">hello@skillbridge.com</p>
-              </div>
-            </div>
+        <div class="mx-auto grid max-w-[1600px] grid-cols-2 gap-8 px-6 py-12 lg:grid-cols-4 lg:px-12 lg:py-16">
+          <div class="flex flex-col items-center gap-1 text-center">
+            <span class="font-poppins text-[40px] leading-none font-bold text-azure">10K+</span>
+            <span class="font-poppins text-[16px] font-semibold text-darkblack">Students</span>
+          </div>
+          <div class="flex flex-col items-center gap-1 text-center">
+            <span class="font-poppins text-[40px] leading-none font-bold text-azure">100+</span>
+            <span class="font-poppins text-[16px] font-semibold text-darkblack">Partner Companies</span>
+          </div>
+          <div class="flex flex-col items-center gap-1 text-center">
+            <span class="font-poppins text-[40px] leading-none font-bold text-azure">500+</span>
+            <span class="font-poppins text-[16px] font-semibold text-darkblack">Workshops</span>
+          </div>
+          <div class="flex flex-col items-center gap-1 text-center">
+            <span class="font-poppins text-[40px] leading-none font-bold text-azure">50+</span>
+            <span class="font-poppins text-[16px] font-semibold text-darkblack">Scholarships</span>
+          </div>
+        </div>
+      </section>
 
-            <div class="flex items-center gap-4 rounded-2xl border border-slate-100 bg-white p-6 shadow-[0_5px_10px_0_rgba(49,49,49,0.10)]">
-              <div class="flex h-12 w-12 items-center justify-center rounded-full bg-avaborder text-brand">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-5 w-5">
-                  <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.8a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.4a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.8.7a2 2 0 0 1 1.8 2z" />
-                </svg>
-              </div>
-              <div>
-                <h3 class="font-poppins text-[18px] font-semibold text-darkblack">Phone</h3>
-                <p class="text-[15px] font-medium text-darkgrey">+91 98765 43210</p>
-              </div>
-            </div>
-
-            <div class="flex items-center gap-4 rounded-2xl border border-slate-100 bg-white p-6 shadow-[0_5px_10px_0_rgba(49,49,49,0.10)]">
-              <div class="flex h-12 w-12 items-center justify-center rounded-full bg-avaborder text-brand">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-5 w-5">
-                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-              </div>
-              <div>
-                <h3 class="font-poppins text-[18px] font-semibold text-darkblack">Location</h3>
-                <p class="text-[15px] font-medium text-darkgrey">Bengaluru, Karnataka, India</p>
-              </div>
-            </div>
+      <!-- values -->
+      <section class="relative">
+        <div class="mx-auto grid max-w-[1600px] grid-cols-1 gap-6 px-6 py-12 sm:grid-cols-3 lg:px-12 lg:py-16">
+          <div class="rounded-2xl border border-slate-100 bg-white p-8 shadow-[0_5px_10px_0_rgba(49,49,49,0.10)]">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-10 w-10 text-brand">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M12 7v5l3 3" />
+            </svg>
+            <h3 class="mt-5 font-poppins text-[22px] font-semibold text-darkblack">Accessible for All</h3>
+            <p class="mt-3 font-poppins text-[15px] leading-[160%] font-medium text-darkblack/80">
+              We keep our doors open to learners from every background, budget, and skill level.
+            </p>
           </div>
 
-          <!-- form -->
-          <form class="flex flex-col gap-5 rounded-2xl border border-slate-100 bg-white p-8 shadow-[0_5px_10px_0_rgba(49,49,49,0.10)]">
-            <div class="border-b border-slate-100 pb-4">
-              <h3 class="font-poppins text-[22px] font-semibold text-darkblack">Send Us an Inquiry</h3>
-              <p class="mt-1 text-[14px] font-medium text-darkgrey">Fields marked with * are required.</p>
-            </div>
+          <div class="rounded-2xl border border-slate-100 bg-white p-8 shadow-[0_5px_10px_0_rgba(49,49,49,0.10)]">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-10 w-10 text-brand">
+              <path d="M12 3l2.9 6.26L21.5 9.3l-4.75 4.6 1.13 6.6L12 17.4l-5.88 3.1 1.13-6.6L2.5 9.3l6.6-1.04L12 3z" />
+            </svg>
+            <h3 class="mt-5 font-poppins text-[22px] font-semibold text-darkblack">Quality First</h3>
+            <p class="mt-3 font-poppins text-[15px] leading-[160%] font-medium text-darkblack/80">
+              Every course and mentor is vetted, so you always learn from the best.
+            </p>
+          </div>
 
-            <div class="grid gap-5 sm:grid-cols-2">
-              <label class="flex flex-col gap-2">
-                <span class="font-poppins text-[15px] font-semibold text-darkblack">First Name <span class="text-[#e23b3b]">*</span></span>
-                <input type="text" placeholder="John" class="form-input" />
-              </label>
-              <label class="flex flex-col gap-2">
-                <span class="font-poppins text-[15px] font-semibold text-darkblack">Last Name <span class="text-[#e23b3b]">*</span></span>
-                <input type="text" placeholder="Doe" class="form-input" />
-              </label>
-            </div>
-
-            <div class="grid gap-5 sm:grid-cols-2">
-              <label class="flex flex-col gap-2">
-                <span class="font-poppins text-[15px] font-semibold text-darkblack">Organization / Institution</span>
-                <input type="text" placeholder="Your organization" class="form-input" />
-              </label>
-              <label class="flex flex-col gap-2">
-                <span class="font-poppins text-[15px] font-semibold text-darkblack">Email <span class="text-[#e23b3b]">*</span></span>
-                <input type="email" placeholder="you@organization.com" class="form-input" />
-              </label>
-            </div>
-
-            <div class="grid gap-5 sm:grid-cols-2">
-              <label class="flex flex-col gap-2">
-                <span class="font-poppins text-[15px] font-semibold text-darkblack">Subject of Inquiry <span class="text-[#e23b3b]">*</span></span>
-                <div class="relative">
-                  <select class="form-input cursor-pointer appearance-none pr-10">
-                    <option>General Inquiry</option>
-                    <option>Internships &amp; Jobs</option>
-                    <option>Workshops &amp; Events</option>
-                    <option>Scholarships &amp; Funding</option>
-                    <option>Partnership Opportunities</option>
-                    <option>Technical Support</option>
-                  </select>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="pointer-events-none absolute top-1/2 right-4 h-4 w-4 -translate-y-1/2 text-darkgrey">
-                    <path d="m6 9 6 6 6-6" />
-                  </svg>
-                </div>
-              </label>
-              <label class="flex flex-col gap-2">
-                <span class="font-poppins text-[15px] font-semibold text-darkblack">Department</span>
-                <div class="relative">
-                  <select class="form-input cursor-pointer appearance-none pr-10">
-                    <option>Careers</option>
-                    <option>Academics</option>
-                    <option>Partnerships</option>
-                    <option>Student Support</option>
-                    <option>Media &amp; Press</option>
-                  </select>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="pointer-events-none absolute top-1/2 right-4 h-4 w-4 -translate-y-1/2 text-darkgrey">
-                    <path d="m6 9 6 6 6-6" />
-                  </svg>
-                </div>
-              </label>
-            </div>
-
-            <label class="flex flex-col gap-2">
-              <span class="font-poppins text-[15px] font-semibold text-darkblack">Message <span class="text-[#e23b3b]">*</span></span>
-              <textarea rows="5" placeholder="How can we help you?" class="form-input resize-none"></textarea>
-            </label>
-
-            <label class="flex cursor-pointer items-start gap-3 text-[14px] font-medium text-darkgrey">
-              <input type="checkbox" class="mt-0.5 h-4 w-4 shrink-0 accent-brand" />
-              I agree to the Privacy Policy and consent to being contacted by SkillBridge.
-            </label>
-
-            <button
-              type="submit"
-              class="mt-1 flex h-[52px] items-center justify-center rounded-full bg-gradient-to-r from-brand to-brand-dark text-[16px] font-semibold text-white shadow-lg shadow-brand/30 transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-brand/40"
-            >
-              Submit Inquiry
-            </button>
-          </form>
+          <div class="rounded-2xl border border-slate-100 bg-white p-8 shadow-[0_5px_10px_0_rgba(49,49,49,0.10)]">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-10 w-10 text-brand">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+            <h3 class="mt-5 font-poppins text-[22px] font-semibold text-darkblack">Community Driven</h3>
+            <p class="mt-3 font-poppins text-[15px] leading-[160%] font-medium text-darkblack/80">
+              Learn with peers, share wins, and grow together through our active community.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -301,14 +267,14 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-4.5 w-4.5 shrink-0 text-azure">
                   <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.8a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.4a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.8.7a2 2 0 0 1 1.8 2z" />
                 </svg>
-                +91 98765 43210
+                +977 98123 45678
               </li>
               <li class="flex items-center gap-2.5">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-4.5 w-4.5 shrink-0 text-azure">
                   <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
                   <circle cx="12" cy="10" r="3" />
                 </svg>
-                Bengaluru, Karnataka, India
+                Kathmandu, Nepal
               </li>
             </ul>
           </div>

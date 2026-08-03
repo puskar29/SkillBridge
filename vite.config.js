@@ -6,16 +6,17 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
   ],
+  base: './',
   build: {
     rollupOptions: {
       input: {
-        main: fileURLToPath(new URL('./index.html', import.meta.url)),
-        opportunities: fileURLToPath(new URL('./opportunities.html', import.meta.url)),
-        workshops: fileURLToPath(new URL('./workshops.html', import.meta.url)),
-        internships: fileURLToPath(new URL('./internships.html', import.meta.url)),
-        scholarships: fileURLToPath(new URL('./scholarships.html', import.meta.url)),
-        about: fileURLToPath(new URL('./about.html', import.meta.url)),
-        contact: fileURLToPath(new URL('./contact.html', import.meta.url)),
+        main: fileURLToPath(new URL('./pages/index.html', import.meta.url)),
+        opportunities: fileURLToPath(new URL('./pages/opportunities.html', import.meta.url)),
+        workshops: fileURLToPath(new URL('./pages/workshops.html', import.meta.url)),
+        internships: fileURLToPath(new URL('./pages/internships.html', import.meta.url)),
+        scholarships: fileURLToPath(new URL('./pages/scholarships.html', import.meta.url)),
+        about: fileURLToPath(new URL('./pages/about.html', import.meta.url)),
+        contact: fileURLToPath(new URL('./pages/contact.html', import.meta.url)),
       },
     },
   },

@@ -10,8 +10,8 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="src/style.css" />
-    <title>SkillBridge — Opportunities</title>
+    <link rel="stylesheet" href="/src/style.css" />
+    <title>SkillBridge — Internships</title>
   </head>
   <body class="scroll-smooth bg-white font-sans text-darkblack antialiased">
     <div class="relative overflow-hidden">
@@ -23,18 +23,18 @@
             <img
               src="/src/assets/logos/Skill-logo.svg"
               alt="SkillBridge logo"
-              class="h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105 lg:h-16"
+              class="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105 lg:h-14"
             />
-            <span class="hidden font-poppins text-[20px] font-bold tracking-tight text-darkblack md:block lg:text-[22px]">
+            <span class="hidden font-poppins text-[20px] font-bold tracking-tight text-darkblack xl:block lg:text-[22px]">
               Skill<span class="text-brand-dark">Bridge</span>
             </span>
           </a>
 
-          <nav class="hidden items-center gap-7 text-[15px] font-semibold text-darkblack lg:flex xl:gap-9 xl:text-[16px]">
+          <nav class="hidden items-center gap-4 text-[15px] font-semibold text-darkblack lg:flex lg:gap-5 xl:gap-6">
             <a href="index.html" class="nav-link">Home</a>
-            <a href="opportunities.html" class="nav-link active">Opportunities</a>
+            <a href="opportunities.html" class="nav-link">Opportunities</a>
             <a href="workshops.html" class="nav-link">Workshops</a>
-            <a href="internships.html" class="nav-link">Internships</a>
+            <a href="internships.html" class="nav-link active">Internships</a>
             <a href="scholarships.html" class="nav-link">Scholarships</a>
             <a href="about.html" class="nav-link">About Us</a>
             <a href="contact.html" class="nav-link">Contact</a>
@@ -42,7 +42,7 @@
 
           <div class="flex items-center gap-2.5 xl:gap-4">
             <div
-              class="hidden h-[46px] w-[220px] items-center justify-between rounded-full bg-softgrey/70 px-5 transition focus-within:bg-white focus-within:ring-2 focus-within:ring-brand/40 xl:flex"
+              class="hidden h-[44px] w-[200px] items-center justify-between rounded-full bg-softgrey/70 px-5 transition focus-within:bg-white focus-within:ring-2 focus-within:ring-brand/40 2xl:flex"
             >
               <span class="text-[13px] font-medium text-darkgrey">Search opportunities</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="h-4.5 w-4.5 text-darkgrey">
@@ -52,16 +52,48 @@
             </div>
             <a
               href="#"
-              class="flex h-[46px] w-[92px] items-center justify-center rounded-full border border-darkblack/20 text-[15px] font-semibold text-darkblack transition hover:-translate-y-0.5 hover:border-brand hover:text-brand xl:text-[16px]"
+              class="flex h-[44px] w-[84px] items-center justify-center rounded-full border border-darkblack/20 text-[15px] font-semibold text-darkblack transition hover:-translate-y-0.5 hover:border-brand hover:text-brand"
             >
               Login
             </a>
             <a
               href="#"
-              class="flex h-[46px] w-[108px] items-center justify-center rounded-full bg-gradient-to-r from-brand to-brand-dark text-[15px] font-semibold text-white shadow-lg shadow-brand/30 transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-brand/40 xl:text-[16px]"
+              class="flex h-[44px] w-[100px] items-center justify-center rounded-full bg-gradient-to-r from-brand to-brand-dark text-[15px] font-semibold text-white shadow-lg shadow-brand/30 transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-brand/40"
             >
               Sign Up
             </a>
+
+            <button
+              type="button"
+              id="menu-toggle"
+              aria-label="Open menu"
+              aria-expanded="false"
+              class="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 text-darkblack transition hover:border-brand hover:text-brand lg:hidden"
+            >
+              <svg id="menu-open-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-6 w-6">
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+              <svg id="menu-close-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hidden h-6 w-6">
+                <path d="M6 6l12 12M18 6L6 18" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- mobile menu -->
+        <div id="mobile-menu" class="hidden border-t border-slate-100 bg-white px-6 pt-4 pb-6 lg:hidden">
+          <nav class="flex flex-col gap-1 text-[15px] font-semibold text-darkblack">
+            <a href="index.html" class="nav-link rounded-lg px-3 py-2.5">Home</a>
+            <a href="opportunities.html" class="nav-link rounded-lg px-3 py-2.5">Opportunities</a>
+            <a href="workshops.html" class="nav-link rounded-lg px-3 py-2.5">Workshops</a>
+            <a href="internships.html" class="nav-link active rounded-lg bg-avaborder px-3 py-2.5">Internships</a>
+            <a href="scholarships.html" class="nav-link rounded-lg px-3 py-2.5">Scholarships</a>
+            <a href="about.html" class="nav-link rounded-lg px-3 py-2.5">About Us</a>
+            <a href="contact.html" class="nav-link rounded-lg px-3 py-2.5">Contact</a>
+          </nav>
+          <div class="mt-5 flex items-center gap-3">
+            <a href="#" class="flex h-11 flex-1 items-center justify-center rounded-full border border-darkblack/20 text-[15px] font-semibold text-darkblack transition hover:border-brand hover:text-brand">Login</a>
+            <a href="#" class="flex h-11 flex-1 items-center justify-center rounded-full bg-gradient-to-r from-brand to-brand-dark text-[15px] font-semibold text-white shadow-lg shadow-brand/30">Sign Up</a>
           </div>
         </div>
       </header>
@@ -74,119 +106,109 @@
         </div>
 
         <div class="mx-auto max-w-[1600px] px-6 py-16 lg:px-12 lg:py-24">
-          <div class="w-fit rounded-3xl bg-avaborder px-4 py-2 text-[18px] font-bold text-linkblue">OPPORTUNITIES</div>
+          <div class="w-fit rounded-3xl bg-avaborder px-4 py-2 text-[18px] font-bold text-linkblue">INTERNSHIPS</div>
           <h1 class="mt-4 font-poppins text-[38px] leading-[1.25] font-bold tracking-tight lg:text-[52px]">
-            Every Opportunity.<br />One <span class="text-brand-dark">Platform</span>
+            Kickstart Your<br />Career With <span class="text-brand-dark">SkillBridge</span>
           </h1>
           <p class="mt-6 max-w-[620px] font-poppins text-[16px] leading-[1.7] font-medium text-darkblack/80 lg:text-[17px]">
-            Explore internships, workshops, hackathons, scholarships, and student
-            events — all managed in one easy-to-use system.
+            Gain real-world experience with our partner companies. Work on live
+            projects, learn from mentors, and build a portfolio that stands out.
           </p>
         </div>
       </main>
 
-      <!-- categories -->
+      <!-- internship listings -->
       <section class="border-t border-slate-100 bg-gradient-to-b from-white to-avaborder/40">
         <div class="mx-auto grid max-w-[1600px] grid-cols-1 gap-6 px-6 py-12 sm:grid-cols-2 lg:px-12 lg:grid-cols-3 lg:py-16">
-          <a href="internships.html" class="group rounded-2xl border border-slate-100 bg-white p-6 shadow-[0_5px_10px_0_rgba(49,49,49,0.10)] transition hover:-translate-y-1 hover:shadow-[0_14px_30px_-8px_rgba(45,82,180,0.25)]">
-            <div class="flex h-14 w-14 items-center justify-center rounded-full bg-[#d8ffe7] text-[#18b15a]">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-7 w-7">
-                <rect x="2" y="7" width="20" height="14" rx="2" />
-                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-              </svg>
+          <div class="rounded-2xl border border-slate-100 bg-white p-6 shadow-[0_5px_10px_0_rgba(49,49,49,0.10)]">
+            <div class="flex items-center justify-between">
+              <h3 class="font-poppins text-[20px] font-semibold text-darkblack">Frontend Developer</h3>
+              <span class="rounded-full bg-avaborder px-3 py-1 text-[12px] font-semibold text-linkblue">Remote</span>
             </div>
-            <h3 class="mt-5 font-poppins text-[22px] font-semibold text-darkblack">Internships</h3>
-            <p class="mt-2 font-poppins text-[15px] leading-[160%] font-medium text-darkblack/80">
-              Gain real-world experience at partner companies.
+            <p class="mt-2 text-[14px] font-medium text-[#6b6b6b]">TechNova · 3 months</p>
+            <p class="mt-3 font-poppins text-[15px] leading-[150%] font-medium text-darkblack/80">
+              Build responsive interfaces with React and Tailwind alongside our product team.
             </p>
-            <span class="mt-4 inline-flex items-center gap-2 text-[15px] font-semibold text-brand transition group-hover:gap-3 group-hover:text-brand-dark">
-              Explore
+            <a href="#" class="mt-4 inline-flex items-center gap-2 text-[15px] font-semibold text-brand transition hover:text-brand-dark">
+              Apply now
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="h-4 w-4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-            </span>
-          </a>
+            </a>
+          </div>
 
-          <a href="workshops.html" class="group rounded-2xl border border-slate-100 bg-white p-6 shadow-[0_5px_10px_0_rgba(49,49,49,0.10)] transition hover:-translate-y-1 hover:shadow-[0_14px_30px_-8px_rgba(45,82,180,0.25)]">
-            <div class="flex h-14 w-14 items-center justify-center rounded-full bg-[#e6eeff] text-brand">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-7 w-7">
-                <path d="m8 9-3 3 3 3M16 9l3 3-3 3M14 5l-4 14" />
-              </svg>
+          <div class="rounded-2xl border border-slate-100 bg-white p-6 shadow-[0_5px_10px_0_rgba(49,49,49,0.10)]">
+            <div class="flex items-center justify-between">
+              <h3 class="font-poppins text-[20px] font-semibold text-darkblack">Data Analyst</h3>
+              <span class="rounded-full bg-avaborder px-3 py-1 text-[12px] font-semibold text-linkblue">Hybrid</span>
             </div>
-            <h3 class="mt-5 font-poppins text-[22px] font-semibold text-darkblack">Workshops</h3>
-            <p class="mt-2 font-poppins text-[15px] leading-[160%] font-medium text-darkblack/80">
-              Hands-on sessions led by industry mentors.
+            <p class="mt-2 text-[14px] font-medium text-[#6b6b6b]">DataLabs · 6 months</p>
+            <p class="mt-3 font-poppins text-[15px] leading-[150%] font-medium text-darkblack/80">
+              Clean datasets, build dashboards, and uncover insights to guide business decisions.
             </p>
-            <span class="mt-4 inline-flex items-center gap-2 text-[15px] font-semibold text-brand transition group-hover:gap-3 group-hover:text-brand-dark">
-              Explore
+            <a href="#" class="mt-4 inline-flex items-center gap-2 text-[15px] font-semibold text-brand transition hover:text-brand-dark">
+              Apply now
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="h-4 w-4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-            </span>
-          </a>
+            </a>
+          </div>
 
-          <a href="#" class="group rounded-2xl border border-slate-100 bg-white p-6 shadow-[0_5px_10px_0_rgba(49,49,49,0.10)] transition hover:-translate-y-1 hover:shadow-[0_14px_30px_-8px_rgba(45,82,180,0.25)]">
-            <div class="flex h-14 w-14 items-center justify-center rounded-full bg-[#efe3ff] text-[#8b34ee]">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-7 w-7">
-                <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09zM12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2zM9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
-              </svg>
+          <div class="rounded-2xl border border-slate-100 bg-white p-6 shadow-[0_5px_10px_0_rgba(49,49,49,0.10)]">
+            <div class="flex items-center justify-between">
+              <h3 class="font-poppins text-[20px] font-semibold text-darkblack">UI/UX Designer</h3>
+              <span class="rounded-full bg-avaborder px-3 py-1 text-[12px] font-semibold text-linkblue">Remote</span>
             </div>
-            <h3 class="mt-5 font-poppins text-[22px] font-semibold text-darkblack">Hackathons</h3>
-            <p class="mt-2 font-poppins text-[15px] leading-[160%] font-medium text-darkblack/80">
-              Compete, build, and win exciting prizes.
+            <p class="mt-2 text-[14px] font-medium text-[#6b6b6b]">PixelHouse · 4 months</p>
+            <p class="mt-3 font-poppins text-[15px] leading-[150%] font-medium text-darkblack/80">
+              Design user flows and prototypes in Figma with our design team.
             </p>
-            <span class="mt-4 inline-flex items-center gap-2 text-[15px] font-semibold text-brand transition group-hover:gap-3 group-hover:text-brand-dark">
-              Explore
+            <a href="#" class="mt-4 inline-flex items-center gap-2 text-[15px] font-semibold text-brand transition hover:text-brand-dark">
+              Apply now
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="h-4 w-4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-            </span>
-          </a>
+            </a>
+          </div>
 
-          <a href="scholarships.html" class="group rounded-2xl border border-slate-100 bg-white p-6 shadow-[0_5px_10px_0_rgba(49,49,49,0.10)] transition hover:-translate-y-1 hover:shadow-[0_14px_30px_-8px_rgba(45,82,180,0.25)]">
-            <div class="flex h-14 w-14 items-center justify-center rounded-full bg-[#fff3da] text-[#ef9f61]">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-7 w-7">
-                <path d="M22 9 12 4 2 9l10 5 10-5v6" />
-                <path d="M6 11.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5" />
-              </svg>
+          <div class="rounded-2xl border border-slate-100 bg-white p-6 shadow-[0_5px_10px_0_rgba(49,49,49,0.10)]">
+            <div class="flex items-center justify-between">
+              <h3 class="font-poppins text-[20px] font-semibold text-darkblack">Marketing Intern</h3>
+              <span class="rounded-full bg-avaborder px-3 py-1 text-[12px] font-semibold text-linkblue">Remote</span>
             </div>
-            <h3 class="mt-5 font-poppins text-[22px] font-semibold text-darkblack">Scholarships</h3>
-            <p class="mt-2 font-poppins text-[15px] leading-[160%] font-medium text-darkblack/80">
-              Find funding and financial aid for your studies.
+            <p class="mt-2 text-[14px] font-medium text-[#6b6b6b]">BrandUp · 3 months</p>
+            <p class="mt-3 font-poppins text-[15px] leading-[150%] font-medium text-darkblack/80">
+              Own social campaigns, write copy, and grow our community channels.
             </p>
-            <span class="mt-4 inline-flex items-center gap-2 text-[15px] font-semibold text-brand transition group-hover:gap-3 group-hover:text-brand-dark">
-              Explore
+            <a href="#" class="mt-4 inline-flex items-center gap-2 text-[15px] font-semibold text-brand transition hover:text-brand-dark">
+              Apply now
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="h-4 w-4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-            </span>
-          </a>
+            </a>
+          </div>
 
-          <a href="#" class="group rounded-2xl border border-slate-100 bg-white p-6 shadow-[0_5px_10px_0_rgba(49,49,49,0.10)] transition hover:-translate-y-1 hover:shadow-[0_14px_30px_-8px_rgba(45,82,180,0.25)]">
-            <div class="flex h-14 w-14 items-center justify-center rounded-full bg-[#ffe9e9] text-[#e23b3b]">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-7 w-7">
-                <rect x="3" y="5" width="18" height="16" rx="2" />
-                <path d="M8 3v4M16 3v4M3 10h18" />
-              </svg>
+          <div class="rounded-2xl border border-slate-100 bg-white p-6 shadow-[0_5px_10px_0_rgba(49,49,49,0.10)]">
+            <div class="flex items-center justify-between">
+              <h3 class="font-poppins text-[20px] font-semibold text-darkblack">Backend Engineer</h3>
+              <span class="rounded-full bg-avaborder px-3 py-1 text-[12px] font-semibold text-linkblue">Hybrid</span>
             </div>
-            <h3 class="mt-5 font-poppins text-[22px] font-semibold text-darkblack">Events</h3>
-            <p class="mt-2 font-poppins text-[15px] leading-[160%] font-medium text-darkblack/80">
-              Register for student events happening near you.
+            <p class="mt-2 text-[14px] font-medium text-[#6b6b6b]">CoreStack · 6 months</p>
+            <p class="mt-3 font-poppins text-[15px] leading-[150%] font-medium text-darkblack/80">
+              Build APIs and services in Node.js and PostgreSQL with senior engineers.
             </p>
-            <span class="mt-4 inline-flex items-center gap-2 text-[15px] font-semibold text-brand transition group-hover:gap-3 group-hover:text-brand-dark">
-              Explore
+            <a href="#" class="mt-4 inline-flex items-center gap-2 text-[15px] font-semibold text-brand transition hover:text-brand-dark">
+              Apply now
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="h-4 w-4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-            </span>
-          </a>
+            </a>
+          </div>
 
-          <a href="#" class="group rounded-2xl border border-slate-100 bg-white p-6 shadow-[0_5px_10px_0_rgba(49,49,49,0.10)] transition hover:-translate-y-1 hover:shadow-[0_14px_30px_-8px_rgba(45,82,180,0.25)]">
-            <div class="flex h-14 w-14 items-center justify-center rounded-full bg-[#e5f6ff] text-azure">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-7 w-7">
-                <path d="m12 3 9 5-9 5-9-5 9-5z" />
-                <path d="m3 13 9 5 9-5" />
-              </svg>
+          <div class="rounded-2xl border border-slate-100 bg-white p-6 shadow-[0_5px_10px_0_rgba(49,49,49,0.10)]">
+            <div class="flex items-center justify-between">
+              <h3 class="font-poppins text-[20px] font-semibold text-darkblack">Content Writer</h3>
+              <span class="rounded-full bg-avaborder px-3 py-1 text-[12px] font-semibold text-linkblue">Remote</span>
             </div>
-            <h3 class="mt-5 font-poppins text-[22px] font-semibold text-darkblack">Bootcamps</h3>
-            <p class="mt-2 font-poppins text-[15px] leading-[160%] font-medium text-darkblack/80">
-              Intensive programs to fast-track your growth.
+            <p class="mt-2 text-[14px] font-medium text-[#6b6b6b]">WordForge · 3 months</p>
+            <p class="mt-3 font-poppins text-[15px] leading-[150%] font-medium text-darkblack/80">
+              Write blog posts and guides that help learners discover SkillBridge.
             </p>
-            <span class="mt-4 inline-flex items-center gap-2 text-[15px] font-semibold text-brand transition group-hover:gap-3 group-hover:text-brand-dark">
-              Explore
+            <a href="#" class="mt-4 inline-flex items-center gap-2 text-[15px] font-semibold text-brand transition hover:text-brand-dark">
+              Apply now
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="h-4 w-4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-            </span>
-          </a>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -279,14 +301,14 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-4.5 w-4.5 shrink-0 text-azure">
                   <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.8a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.4a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.8.7a2 2 0 0 1 1.8 2z" />
                 </svg>
-                +91 98765 43210
+                +977 98123 45678
               </li>
               <li class="flex items-center gap-2.5">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-4.5 w-4.5 shrink-0 text-azure">
                   <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
                   <circle cx="12" cy="10" r="3" />
                 </svg>
-                Bengaluru, Karnataka, India
+                Kathmandu, Nepal
               </li>
             </ul>
           </div>
