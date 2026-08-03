@@ -10,13 +10,13 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: fileURLToPath(new URL('./pages/index.html', import.meta.url)),
-        opportunities: fileURLToPath(new URL('./pages/opportunities.html', import.meta.url)),
-        workshops: fileURLToPath(new URL('./pages/workshops.html', import.meta.url)),
-        internships: fileURLToPath(new URL('./pages/internships.html', import.meta.url)),
-        scholarships: fileURLToPath(new URL('./pages/scholarships.html', import.meta.url)),
-        about: fileURLToPath(new URL('./pages/about.html', import.meta.url)),
-        contact: fileURLToPath(new URL('./pages/contact.html', import.meta.url)),
+        main: fileURLToPath(new URL('./index.html', import.meta.url)),
+        opportunities: fileURLToPath(new URL('./src/pages/opportunities.html', import.meta.url)),
+        workshops: fileURLToPath(new URL('./src/pages/workshops.html', import.meta.url)),
+        internships: fileURLToPath(new URL('./src/pages/internships.html', import.meta.url)),
+        scholarships: fileURLToPath(new URL('./src/pages/scholarships.html', import.meta.url)),
+        about: fileURLToPath(new URL('./src/pages/about.html', import.meta.url)),
+        contact: fileURLToPath(new URL('./src/pages/contact.html', import.meta.url)),
       },
     },
   },

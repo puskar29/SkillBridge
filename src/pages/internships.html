@@ -19,7 +19,7 @@
       <!-- navbar -->
       <header class="sticky top-0 z-30 border-b border-slate-100/80 bg-white/85 shadow-[0_8px_30px_-12px_rgba(45,82,180,0.15)] backdrop-blur-md">
         <div class="flex items-center justify-between gap-6 px-6 py-2.5 lg:px-12">
-          <a href="index.html" class="group flex items-center gap-1.5 transition hover:opacity-90">
+          <a href="../../index.html" class="group flex items-center gap-1.5 transition hover:opacity-90">
             <img
               src="/src/assets/logos/Skill-logo.svg"
               alt="SkillBridge logo"
@@ -31,7 +31,7 @@
           </a>
 
           <nav class="hidden items-center gap-4 text-[15px] font-semibold text-darkblack lg:flex lg:gap-5 xl:gap-6">
-            <a href="index.html" class="nav-link">Home</a>
+            <a href="../../index.html" class="nav-link">Home</a>
             <a href="opportunities.html" class="nav-link">Opportunities</a>
             <a href="workshops.html" class="nav-link">Workshops</a>
             <a href="internships.html" class="nav-link active">Internships</a>
@@ -83,7 +83,7 @@
         <!-- mobile menu -->
         <div id="mobile-menu" class="hidden border-t border-slate-100 bg-white px-6 pt-4 pb-6 lg:hidden">
           <nav class="flex flex-col gap-1 text-[15px] font-semibold text-darkblack">
-            <a href="index.html" class="nav-link rounded-lg px-3 py-2.5">Home</a>
+            <a href="../../index.html" class="nav-link rounded-lg px-3 py-2.5">Home</a>
             <a href="opportunities.html" class="nav-link rounded-lg px-3 py-2.5">Opportunities</a>
             <a href="workshops.html" class="nav-link rounded-lg px-3 py-2.5">Workshops</a>
             <a href="internships.html" class="nav-link active rounded-lg bg-avaborder px-3 py-2.5">Internships</a>
@@ -223,10 +223,11 @@
                 Get new internships, events, and opportunities delivered straight to your inbox.
               </p>
             </div>
-            <form class="flex w-full max-w-md gap-3" onsubmit="return false">
+            <!-- Newsletter: add name="email" is set so you can post this to your PHP/Java handler later. -->
+            <form class="flex w-full max-w-md flex-col gap-3 sm:flex-row" onsubmit="return false">
               <input
                 type="email"
-                placeholder="Enter your email"
+                name="email" placeholder="Enter your email"
                 class="h-[52px] flex-1 rounded-full border border-white/20 bg-white/10 px-5 text-[15px] font-medium text-white outline-none transition placeholder:text-white/50 focus:border-white/50 focus:ring-2 focus:ring-white/30"
               />
               <button type="submit" class="flex h-[52px] items-center justify-center rounded-full bg-white px-6 text-[15px] font-semibold text-brand-dark shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl">
@@ -240,7 +241,7 @@
         <div class="grid gap-10 px-6 py-14 sm:grid-cols-2 lg:grid-cols-4 lg:px-12">
           <!-- brand -->
           <div class="flex flex-col items-start gap-5">
-            <a href="index.html" class="flex items-center gap-3">
+            <a href="../../index.html" class="flex items-center gap-3">
               <img src="/src/assets/logos/Skill-logo.svg" alt="SkillBridge logo" class="h-10 w-12 object-contain brightness-0 invert" />
               <span class="font-poppins text-xl font-bold">SkillBridge</span>
             </a>
@@ -267,7 +268,7 @@
           <div>
             <h4 class="font-poppins text-[16px] font-semibold">Quick Links</h4>
             <ul class="mt-5 flex flex-col gap-3.5 text-[14px] font-medium text-white/70">
-              <li><a href="index.html" class="footer-link">Home</a></li>
+              <li><a href="../../index.html" class="footer-link">Home</a></li>
               <li><a href="opportunities.html" class="footer-link">Opportunities</a></li>
               <li><a href="workshops.html" class="footer-link">Workshops</a></li>
               <li><a href="internships.html" class="footer-link">Internships</a></li>
