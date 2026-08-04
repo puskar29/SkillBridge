@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+    <title>SkillBridge — Student Dashboard</title>
+  </head>
+  <body class="bg-avaborder/40 font-sans text-darkblack antialiased">
+
+    <!-- sidebar -->
+    <aside id="panel-sidebar" class="fixed inset-y-0 left-0 z-50 flex w-72 -translate-x-full flex-col bg-white shadow-2xl transition-transform duration-300 lg:translate-x-0 lg:shadow-none">
+      <div class="flex items-center justify-between px-6 pt-6">
+        <a href="../../index.html" class="flex items-center gap-2">
+          <img src="/src/assets/logos/Skill-logo.svg" alt="SkillBridge logo" class="h-10 w-auto object-contain" />
+          <span class="font-poppins text-[18px] font-bold tracking-tight">Skill<span class="text-brand-dark">Bridge</span></span>
+        </a>
+        <button
+          type="button"
+          id="sidebar-close"
+          aria-label="Close menu"
+          class="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 text-darkblack transition hover:border-brand hover:text-brand lg:hidden"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5">
+            <path d="M6 6l12 12M18 6L6 18" />
+          </svg>
+        </button>
+      </div>
+
+      <nav class="mt-8 flex flex-1 flex-col gap-1.5 px-4">
+        <a href="#" class="sidebar-link active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5"><rect x="3" y="3" width="7" height="9" rx="1.5" /><rect x="14" y="3" width="7" height="5" rx="1.5" /><rect x="14" y="12" width="7" height="9" rx="1.5" /><rect x="3" y="16" width="7" height="5" rx="1.5" /></svg>
+          Dashboard
+        </a>
+        <a href="#" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4" /><circle cx="9" cy="20" r="1" /><circle cx="18" cy="20" r="1" /></svg>
+          Opportunities
+        </a>
+        <a href="#" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5"><path d="M9 11l3 3 8-8" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+          My Registrations
+        </a>
+        <a href="#" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
+          My Profile
+        </a>
+        <a href="#" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5"><circle cx="12" cy="12" r="3" /><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.09a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h.09a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.09a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" /></svg>
+          Settings
+        </a>
+      </nav>
+
+      <div class="border-t border-slate-100 p-4">
+        <a href="login.html" class="sidebar-link text-[#e23b3b] hover:bg-red-50 hover:text-[#e23b3b]">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" /><path d="m16 17 5-5-5-5" /><path d="M21 12H9" /></svg>
+          Logout
+        </a>
+      </div>
+    </aside>
+
+    <div id="sidebar-overlay" class="fixed inset-0 z-40 hidden bg-darkblack/40 lg:hidden"></div>
+
+    <div class="lg:pl-72">
+      <!-- topbar -->
+      <header class="sticky top-0 z-30 border-b border-slate-100/80 bg-white/85 backdrop-blur-md">
+        <div class="flex items-center justify-between gap-4 px-6 py-3.5 lg:px-10">
+          <div class="flex items-center gap-3">
+            <button
+              type="button"
+              id="sidebar-toggle"
+              aria-label="Open menu"
+              class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-darkblack transition hover:border-brand hover:text-brand lg:hidden"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5">
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+            <div class="hidden items-center gap-2 text-[15px] font-medium text-darkgrey sm:flex">
+              <span>Dashboard</span>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <div class="hidden h-[44px] w-[220px] items-center rounded-full bg-softgrey/70 px-5 transition focus-within:bg-white focus-within:ring-2 focus-within:ring-brand/40 md:flex">
+              <input
+                id="panel-search"
+                type="search"
+                data-target="#event-list > div, #registrations-tbody tr"
+                placeholder="Search opportunities"
+                class="h-full w-full bg-transparent text-[13px] font-medium text-darkblack outline-none placeholder:text-darkgrey"
+              />
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="ml-2 h-4.5 w-4.5 shrink-0 text-darkgrey">
+                <circle cx="11" cy="11" r="7" />
+                <path d="m21 21-4.35-4.35" />
+              </svg>
+            </div>
+            <button type="button" aria-label="Notifications" class="relative flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-darkblack transition hover:border-brand hover:text-brand">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5">
+                <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" />
+                <path d="M13.7 21a2 2 0 0 1-3.4 0" />
+              </svg>
+              <span class="absolute top-2.5 right-2.5 h-2 w-2 rounded-full bg-brand"></span>
+            </button>
+            <div class="flex items-center gap-3">
+              <div class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-brand to-brand-dark font-poppins text-[15px] font-bold text-white">A</div>
+              <div class="hidden text-left sm:block">
+                <span class="block font-poppins text-[14px] font-semibold text-darkblack">Anisha K.</span>
+                <span class="block text-[12px] font-medium text-darkgrey">Student</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- content -->
+      <main class="px-6 py-8 lg:px-10 lg:py-10">
+        <div class="mb-8">
+          <h1 class="font-poppins text-[26px] font-bold tracking-tight lg:text-[32px]">
+            Good morning, <span class="text-brand-dark">Anisha</span> 👋
+          </h1>
+          <p class="mt-1.5 text-[15px] font-medium text-darkgrey">Here&rsquo;s what&rsquo;s happening with your opportunities today.</p>
+        </div>
+
+        <!-- stats -->
+        <div class="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+          <div class="stat-card">
+            <div class="stat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-6 w-6"><path d="M9 11l3 3 8-8" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+            </div>
+            <div>
+              <span class="block text-[13px] font-semibold text-darkgrey">Total Registrations</span>
+              <span class="block font-poppins text-[28px] font-bold text-darkblack">12</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-6 w-6"><rect x="3" y="4" width="18" height="18" rx="2" /><path d="M16 2v4M8 2v4M3 10h18" /></svg>
+            </div>
+            <div>
+              <span class="block text-[13px] font-semibold text-darkgrey">Upcoming Events</span>
+              <span class="block font-poppins text-[28px] font-bold text-darkblack">5</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-6 w-6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" /></svg>
+            </div>
+            <div>
+              <span class="block text-[13px] font-semibold text-darkgrey">Applications Sent</span>
+              <span class="block font-poppins text-[28px] font-bold text-darkblack">8</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-6 w-6"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" /><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" /><path d="M4 22h16" /><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" /><path d="M14 14.66V17c0 .55.47.98.97 1.21 1.18.54 2.03 2.03 2.03 3.79" /><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" /></svg>
+            </div>
+            <div>
+              <span class="block text-[13px] font-semibold text-darkgrey">Skill Points</span>
+              <span class="block font-poppins text-[28px] font-bold text-brand-dark">240</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- main grid -->
+        <div class="mt-8 grid gap-8 xl:grid-cols-3">
+          <!-- upcoming events -->
+          <section class="rounded-2xl border border-slate-100 bg-white p-6 shadow-[0_5px_10px_0_rgba(49,49,49,0.08)] xl:col-span-2">
+            <div class="mb-5 flex items-center justify-between">
+              <h2 class="font-poppins text-[20px] font-semibold text-darkblack">Upcoming Events</h2>
+              <a href="#" class="text-[14px] font-semibold text-linkblue transition hover:underline">View all</a>
+            </div>
+
+            <div id="event-list" class="flex flex-col gap-4">
+              <div class="flex items-center gap-4 rounded-xl border border-slate-100 p-4 transition hover:border-brand/30 hover:bg-avaborder/30">
+                <div class="flex h-14 w-14 shrink-0 flex-col items-center justify-center rounded-xl bg-gradient-to-br from-brand to-brand-dark text-white">
+                  <span class="font-poppins text-[16px] font-bold leading-none">TODAY</span>
+                </div>
+                <div class="min-w-0 flex-1">
+                  <h3 class="truncate font-poppins text-[16px] font-semibold text-darkblack">UI/UX Design Workshop</h3>
+                  <p class="text-[13px] font-medium text-darkgrey">Workshop · 3:00 PM · Online</p>
+                </div>
+                <span class="hidden rounded-full bg-avaborder px-3 py-1 text-[13px] font-semibold text-linkblue sm:block">Live soon</span>
+              </div>
+
+              <div class="flex items-center gap-4 rounded-xl border border-slate-100 p-4 transition hover:border-brand/30 hover:bg-avaborder/30">
+                <div class="flex h-14 w-14 shrink-0 flex-col items-center justify-center rounded-xl bg-gradient-to-br from-azure to-brand text-white">
+                  <span class="font-poppins text-[18px] font-bold leading-none">12</span>
+                  <span class="text-[11px] font-semibold">AUG</span>
+                </div>
+                <div class="min-w-0 flex-1">
+                  <h3 class="truncate font-poppins text-[16px] font-semibold text-darkblack">Startup Hackathon 2026</h3>
+                  <p class="text-[13px] font-medium text-darkgrey">Hackathon · 48 hrs · Kathmandu</p>
+                </div>
+                <span class="hidden rounded-full bg-avaborder px-3 py-1 text-[13px] font-semibold text-linkblue sm:block">Confirmed</span>
+              </div>
+
+              <div class="flex items-center gap-4 rounded-xl border border-slate-100 p-4 transition hover:border-brand/30 hover:bg-avaborder/30">
+                <div class="flex h-14 w-14 shrink-0 flex-col items-center justify-center rounded-xl bg-gradient-to-br from-brand-dark to-charcoal text-white">
+                  <span class="font-poppins text-[18px] font-bold leading-none">18</span>
+                  <span class="text-[11px] font-semibold">AUG</span>
+                </div>
+                <div class="min-w-0 flex-1">
+                  <h3 class="truncate font-poppins text-[16px] font-semibold text-darkblack">Scholarship Application Deadline</h3>
+                  <p class="text-[13px] font-medium text-darkgrey">Scholarship · Apply online</p>
+                </div>
+                <span class="hidden rounded-full bg-avaborder px-3 py-1 text-[13px] font-semibold text-linkblue sm:block">Pending</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- skill progress -->
+          <section class="rounded-2xl border border-slate-100 bg-white p-6 shadow-[0_5px_10px_0_rgba(49,49,49,0.08)]">
+            <div class="mb-5 flex items-center justify-between">
+              <h2 class="font-poppins text-[20px] font-semibold text-darkblack">Skill Progress</h2>
+              <span class="rounded-full bg-green-100 px-3 py-1 text-[13px] font-semibold text-green-700">On track</span>
+            </div>
+
+            <div class="flex flex-col gap-5">
+              <div>
+                <div class="mb-2 flex items-center justify-between text-[14px] font-semibold">
+                  <span class="text-darkblack">UI Design</span>
+                  <span class="text-brand-dark">80%</span>
+                </div>
+                <div class="h-2.5 overflow-hidden rounded-full bg-avaborder">
+                  <div class="h-full w-[80%] rounded-full bg-gradient-to-r from-brand to-azure"></div>
+                </div>
+              </div>
+              <div>
+                <div class="mb-2 flex items-center justify-between text-[14px] font-semibold">
+                  <span class="text-darkblack">JavaScript</span>
+                  <span class="text-brand-dark">65%</span>
+                </div>
+                <div class="h-2.5 overflow-hidden rounded-full bg-avaborder">
+                  <div class="h-full w-[65%] rounded-full bg-gradient-to-r from-brand to-azure"></div>
+                </div>
+              </div>
+              <div>
+                <div class="mb-2 flex items-center justify-between text-[14px] font-semibold">
+                  <span class="text-darkblack">Communication</span>
+                  <span class="text-brand-dark">45%</span>
+                </div>
+                <div class="h-2.5 overflow-hidden rounded-full bg-avaborder">
+                  <div class="h-full w-[45%] rounded-full bg-gradient-to-r from-brand to-azure"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 rounded-xl bg-gradient-to-br from-brand to-brand-dark p-5 text-white">
+              <p class="font-poppins text-[15px] font-semibold">Level up your profile</p>
+              <p class="mt-1 text-[13px] font-medium text-white/75">Complete 3 more skills to unlock the &ldquo;Career Ready&rdquo; badge.</p>
+              <button type="button" class="mt-4 flex h-[42px] items-center justify-center rounded-full bg-white px-5 text-[14px] font-semibold text-brand-dark transition hover:-translate-y-0.5 hover:shadow-lg">
+                Explore Skills
+              </button>
+            </div>
+          </section>
+        </div>
+
+        <!-- recent registrations -->
+        <section class="mt-8 rounded-2xl border border-slate-100 bg-white p-6 shadow-[0_5px_10px_0_rgba(49,49,49,0.08)]">
+          <div class="mb-5 flex items-center justify-between">
+            <h2 class="font-poppins text-[20px] font-semibold text-darkblack">Recent Registrations</h2>
+            <a href="#" class="text-[14px] font-semibold text-linkblue transition hover:underline">View all</a>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="data-table min-w-[640px]">
+              <thead>
+                <tr>
+                  <th>Opportunity</th>
+                  <th>Type</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="registrations-tbody">
+                <tr>
+                  <td class="font-poppins font-semibold">UI/UX Design Workshop</td>
+                  <td>Workshop</td>
+                  <td>Aug 04, 2026</td>
+                  <td><span class="rounded-full bg-green-100 px-3 py-1 text-[13px] font-semibold text-green-700">Confirmed</span></td>
+                </tr>
+                <tr>
+                  <td class="font-poppins font-semibold">Startup Hackathon 2026</td>
+                  <td>Hackathon</td>
+                  <td>Aug 12, 2026</td>
+                  <td><span class="rounded-full bg-green-100 px-3 py-1 text-[13px] font-semibold text-green-700">Confirmed</span></td>
+                </tr>
+                <tr>
+                  <td class="font-poppins font-semibold">Data Science Bootcamp</td>
+                  <td>Bootcamp</td>
+                  <td>Jul 28, 2026</td>
+                  <td><span class="rounded-full bg-amber-100 px-3 py-1 text-[13px] font-semibold text-amber-700">Pending</span></td>
+                </tr>
+                <tr>
+                  <td class="font-poppins font-semibold">Web Development Internship</td>
+                  <td>Internship</td>
+                  <td>Jul 15, 2026</td>
+                  <td><span class="rounded-full bg-avaborder px-3 py-1 text-[13px] font-semibold text-linkblue">Completed</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

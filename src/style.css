@@ -118,3 +118,85 @@
   border-color: var(--color-brand);
   box-shadow: 0 0 0 2px rgba(46, 85, 238, 0.3);
 }
+
+/* panel sidebar links */
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-darkblack);
+  transition: all 0.2s;
+}
+.sidebar-link:hover {
+  background: var(--color-avaborder);
+  color: var(--color-brand-dark);
+}
+.sidebar-link.active {
+  background: linear-gradient(to right, var(--color-brand), var(--color-brand-dark));
+  color: #fff;
+  box-shadow: 0 8px 20px -8px rgba(46, 85, 238, 0.6);
+}
+
+/* dashboard stat cards */
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 1.25rem;
+  border: 1px solid #f1f5f9;
+  background: #fff;
+  padding: 1.5rem;
+  box-shadow: 0 5px 10px 0 rgba(49, 49, 49, 0.08);
+  transition: all 0.3s;
+}
+.stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px -12px rgba(46, 85, 238, 0.35);
+}
+.stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  flex-shrink: 0;
+  border-radius: 1rem;
+  background: var(--color-avaborder);
+  color: var(--color-brand);
+}
+
+/* dashboard tables */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.data-table th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-family: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #6b6b6b;
+  border-bottom: 1px solid #f1f5f9;
+}
+.data-table td {
+  padding: 0.875rem 1rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-darkblack);
+  border-bottom: 1px solid #f1f5f9;
+}
+.data-table tr:last-child td {
+  border-bottom: 0;
+}
+.data-table tbody tr {
+  transition: background 0.2s;
+}
+.data-table tbody tr:hover {
+  background: #f8fbff;
+}
+

@@ -41,23 +41,32 @@
           </nav>
 
           <div class="flex items-center gap-2.5 xl:gap-4">
-            <div
-              class="hidden h-[44px] w-[200px] items-center justify-between rounded-full bg-softgrey/70 px-5 transition focus-within:bg-white focus-within:ring-2 focus-within:ring-brand/40 2xl:flex"
+            <form
+              action="opportunities.html" method="get"
+              class="hidden h-[44px] w-[200px] items-center rounded-full bg-softgrey/70 px-5 transition focus-within:bg-white focus-within:ring-2 focus-within:ring-brand/40 2xl:flex"
             >
-              <span class="text-[13px] font-medium text-darkgrey">Search opportunities</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="h-4.5 w-4.5 text-darkgrey">
-                <circle cx="11" cy="11" r="7" />
-                <path d="m21 21-4.35-4.35" />
-              </svg>
-            </div>
+              <input
+                type="search"
+                name="q"
+                placeholder="Search opportunities"
+                aria-label="Search opportunities"
+                class="h-full w-full bg-transparent text-[13px] font-medium text-darkblack outline-none placeholder:text-darkgrey"
+              />
+              <button type="submit" aria-label="Submit search" class="ml-2 flex shrink-0 items-center justify-center text-darkgrey transition hover:text-brand">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="h-4.5 w-4.5">
+                  <circle cx="11" cy="11" r="7" />
+                  <path d="m21 21-4.35-4.35" />
+                </svg>
+              </button>
+            </form>
             <a
-              href="#"
+              href="login.html"
               class="flex h-[44px] w-[84px] items-center justify-center rounded-full border border-darkblack/20 text-[15px] font-semibold text-darkblack transition hover:-translate-y-0.5 hover:border-brand hover:text-brand"
             >
               Login
             </a>
             <a
-              href="#"
+              href="signup.html"
               class="flex h-[44px] w-[100px] items-center justify-center rounded-full bg-gradient-to-r from-brand to-brand-dark text-[15px] font-semibold text-white shadow-lg shadow-brand/30 transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-brand/40"
             >
               Sign Up
@@ -92,8 +101,8 @@
             <a href="contact.html" class="nav-link rounded-lg px-3 py-2.5">Contact</a>
           </nav>
           <div class="mt-5 flex items-center gap-3">
-            <a href="#" class="flex h-11 flex-1 items-center justify-center rounded-full border border-darkblack/20 text-[15px] font-semibold text-darkblack transition hover:border-brand hover:text-brand">Login</a>
-            <a href="#" class="flex h-11 flex-1 items-center justify-center rounded-full bg-gradient-to-r from-brand to-brand-dark text-[15px] font-semibold text-white shadow-lg shadow-brand/30">Sign Up</a>
+            <a href="login.html" class="flex h-11 flex-1 items-center justify-center rounded-full border border-darkblack/20 text-[15px] font-semibold text-darkblack transition hover:border-brand hover:text-brand">Login</a>
+            <a href="signup.html" class="flex h-11 flex-1 items-center justify-center rounded-full bg-gradient-to-r from-brand to-brand-dark text-[15px] font-semibold text-white shadow-lg shadow-brand/30">Sign Up</a>
           </div>
         </div>
       </header>
@@ -129,7 +138,7 @@
             <p class="mt-3 font-poppins text-[15px] leading-[150%] font-medium text-darkblack/80">
               For students pursuing tech courses. Covers tuition for one full program.
             </p>
-            <a href="#" class="mt-4 inline-flex items-center gap-2 text-[15px] font-semibold text-brand transition hover:text-brand-dark">
+            <a href="#" class="apply-link mt-4 inline-flex items-center gap-2 text-[15px] font-semibold text-brand transition hover:text-brand-dark" data-type="scholarship" data-event="Future Tech Scholar">
               Apply now
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="h-4 w-4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
             </a>
@@ -144,7 +153,7 @@
             <p class="mt-3 font-poppins text-[15px] leading-[150%] font-medium text-darkblack/80">
               Supporting women entering science, technology, engineering and math fields.
             </p>
-            <a href="#" class="mt-4 inline-flex items-center gap-2 text-[15px] font-semibold text-brand transition hover:text-brand-dark">
+            <a href="#" class="apply-link mt-4 inline-flex items-center gap-2 text-[15px] font-semibold text-brand transition hover:text-brand-dark" data-type="scholarship" data-event="Women in STEM">
               Apply now
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="h-4 w-4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
             </a>
@@ -159,7 +168,7 @@
             <p class="mt-3 font-poppins text-[15px] leading-[150%] font-medium text-darkblack/80">
               Rewards top-performing students with outstanding academic records.
             </p>
-            <a href="#" class="mt-4 inline-flex items-center gap-2 text-[15px] font-semibold text-brand transition hover:text-brand-dark">
+            <a href="#" class="apply-link mt-4 inline-flex items-center gap-2 text-[15px] font-semibold text-brand transition hover:text-brand-dark" data-type="scholarship" data-event="Merit Excellence Award">
               Apply now
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="h-4 w-4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
             </a>
@@ -174,7 +183,7 @@
             <p class="mt-3 font-poppins text-[15px] leading-[150%] font-medium text-darkblack/80">
               For students actively contributing to their local communities.
             </p>
-            <a href="#" class="mt-4 inline-flex items-center gap-2 text-[15px] font-semibold text-brand transition hover:text-brand-dark">
+            <a href="#" class="apply-link mt-4 inline-flex items-center gap-2 text-[15px] font-semibold text-brand transition hover:text-brand-dark" data-type="scholarship" data-event="Community Scholar">
               Apply now
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="h-4 w-4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
             </a>
@@ -189,7 +198,7 @@
             <p class="mt-3 font-poppins text-[15px] leading-[150%] font-medium text-darkblack/80">
               For aspiring founders who want to turn ideas into real products.
             </p>
-            <a href="#" class="mt-4 inline-flex items-center gap-2 text-[15px] font-semibold text-brand transition hover:text-brand-dark">
+            <a href="#" class="apply-link mt-4 inline-flex items-center gap-2 text-[15px] font-semibold text-brand transition hover:text-brand-dark" data-type="scholarship" data-event="Startup Bootcamp Grant">
               Apply now
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="h-4 w-4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
             </a>
@@ -204,7 +213,7 @@
             <p class="mt-3 font-poppins text-[15px] leading-[150%] font-medium text-darkblack/80">
               Supports creative students in design, arts, and multimedia studies.
             </p>
-            <a href="#" class="mt-4 inline-flex items-center gap-2 text-[15px] font-semibold text-brand transition hover:text-brand-dark">
+            <a href="#" class="apply-link mt-4 inline-flex items-center gap-2 text-[15px] font-semibold text-brand transition hover:text-brand-dark" data-type="scholarship" data-event="Design Talent Grant">
               Apply now
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="h-4 w-4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
             </a>
@@ -330,6 +339,54 @@
 
     </div>
 
+    
+      <!-- registration modal -->
+      <div id="register-modal" class="fixed inset-0 z-50 hidden items-center justify-center overflow-y-auto bg-darkblack/60 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="register-modal-title">
+        <div class="my-8 w-full max-w-lg rounded-2xl border border-slate-100 bg-white p-6 shadow-2xl sm:p-8">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h3 id="register-modal-title" class="font-poppins text-[22px] font-semibold text-darkblack">Register for Event</h3>
+              <p id="register-modal-event" class="mt-1 font-poppins text-[15px] font-semibold text-brand-dark"></p>
+            </div>
+            <button type="button" id="register-modal-close" aria-label="Close form" class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-200 text-darkgrey transition hover:border-brand hover:text-brand">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5"><path d="M6 6l12 12M18 6L6 18" /></svg>
+            </button>
+          </div>
+
+          <form id="register-form" novalidate class="mt-6 flex flex-col gap-4">
+            <input type="hidden" id="register-type" name="type" />
+            <input type="hidden" id="register-event" name="event" />
+            <label class="flex flex-col gap-1.5">
+              <span class="font-poppins text-[14px] font-semibold text-darkblack">Full Name <span class="text-[#e23b3b]">*</span></span>
+              <input id="register-name" type="text" name="full_name" placeholder="Your full name" autocomplete="name" class="form-input" required />
+            </label>
+            <div class="grid gap-4 sm:grid-cols-2">
+              <label class="flex flex-col gap-1.5">
+                <span class="font-poppins text-[14px] font-semibold text-darkblack">Email <span class="text-[#e23b3b]">*</span></span>
+                <input id="register-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" class="form-input" required />
+              </label>
+              <label class="flex flex-col gap-1.5">
+                <span class="font-poppins text-[14px] font-semibold text-darkblack">Phone <span class="text-[13px] font-normal text-[#8a8a8a]">(optional)</span></span>
+                <input type="tel" name="phone" placeholder="+977 98xxxxxxxx" autocomplete="tel" class="form-input" />
+              </label>
+            </div>
+            <label class="flex flex-col gap-1.5">
+              <span class="font-poppins text-[14px] font-semibold text-darkblack">College / University <span class="text-[13px] font-normal text-[#8a8a8a]">(optional)</span></span>
+              <input type="text" name="college" placeholder="e.g. Tribhuvan University" class="form-input" />
+            </label>
+            <label class="flex cursor-pointer items-start gap-3 text-[14px] font-medium text-[#5e5d5d]">
+              <input id="register-consent" type="checkbox" name="consent" class="mt-0.5 h-4 w-4 shrink-0 rounded accent-brand" required />
+              I consent to being contacted by SkillBridge about this application.
+            </label>
+            <div id="register-message" class="hidden rounded-xl px-4 py-3 text-[14px] font-medium"></div>
+            <button type="submit" class="flex h-[52px] items-center justify-center rounded-full bg-gradient-to-r from-brand to-brand-dark text-[15px] font-semibold text-white shadow-lg shadow-brand/30 transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-brand/40">
+              Submit Application
+            </button>
+          </form>
+        </div>
+      </div>
+
     <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/register.js"></script>
   </body>
 </html>

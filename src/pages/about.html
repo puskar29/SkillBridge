@@ -41,23 +41,32 @@
           </nav>
 
           <div class="flex items-center gap-2.5 xl:gap-4">
-            <div
-              class="hidden h-[44px] w-[200px] items-center justify-between rounded-full bg-softgrey/70 px-5 transition focus-within:bg-white focus-within:ring-2 focus-within:ring-brand/40 2xl:flex"
+            <form
+              action="opportunities.html" method="get"
+              class="hidden h-[44px] w-[200px] items-center rounded-full bg-softgrey/70 px-5 transition focus-within:bg-white focus-within:ring-2 focus-within:ring-brand/40 2xl:flex"
             >
-              <span class="text-[13px] font-medium text-darkgrey">Search opportunities</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="h-4.5 w-4.5 text-darkgrey">
-                <circle cx="11" cy="11" r="7" />
-                <path d="m21 21-4.35-4.35" />
-              </svg>
-            </div>
+              <input
+                type="search"
+                name="q"
+                placeholder="Search opportunities"
+                aria-label="Search opportunities"
+                class="h-full w-full bg-transparent text-[13px] font-medium text-darkblack outline-none placeholder:text-darkgrey"
+              />
+              <button type="submit" aria-label="Submit search" class="ml-2 flex shrink-0 items-center justify-center text-darkgrey transition hover:text-brand">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="h-4.5 w-4.5">
+                  <circle cx="11" cy="11" r="7" />
+                  <path d="m21 21-4.35-4.35" />
+                </svg>
+              </button>
+            </form>
             <a
-              href="#"
+              href="login.html"
               class="flex h-[44px] w-[84px] items-center justify-center rounded-full border border-darkblack/20 text-[15px] font-semibold text-darkblack transition hover:-translate-y-0.5 hover:border-brand hover:text-brand"
             >
               Login
             </a>
             <a
-              href="#"
+              href="signup.html"
               class="flex h-[44px] w-[100px] items-center justify-center rounded-full bg-gradient-to-r from-brand to-brand-dark text-[15px] font-semibold text-white shadow-lg shadow-brand/30 transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-brand/40"
             >
               Sign Up
@@ -92,8 +101,8 @@
             <a href="contact.html" class="nav-link rounded-lg px-3 py-2.5">Contact</a>
           </nav>
           <div class="mt-5 flex items-center gap-3">
-            <a href="#" class="flex h-11 flex-1 items-center justify-center rounded-full border border-darkblack/20 text-[15px] font-semibold text-darkblack transition hover:border-brand hover:text-brand">Login</a>
-            <a href="#" class="flex h-11 flex-1 items-center justify-center rounded-full bg-gradient-to-r from-brand to-brand-dark text-[15px] font-semibold text-white shadow-lg shadow-brand/30">Sign Up</a>
+            <a href="login.html" class="flex h-11 flex-1 items-center justify-center rounded-full border border-darkblack/20 text-[15px] font-semibold text-darkblack transition hover:border-brand hover:text-brand">Login</a>
+            <a href="signup.html" class="flex h-11 flex-1 items-center justify-center rounded-full bg-gradient-to-r from-brand to-brand-dark text-[15px] font-semibold text-white shadow-lg shadow-brand/30">Sign Up</a>
           </div>
         </div>
       </header>
@@ -174,6 +183,324 @@
             <p class="mt-3 font-poppins text-[15px] leading-[160%] font-medium text-darkblack/80">
               Learn with peers, share wins, and grow together through our active community.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- what you'll learn -->
+      <section class="relative">
+        <div class="mx-auto max-w-[1600px] px-6 py-12 lg:px-12 lg:py-16">
+          <div class="flex flex-col gap-3">
+            <div class="w-fit rounded-3xl bg-avaborder px-4 py-2 text-[15px] font-bold text-linkblue">LEARN WITH US</div>
+            <h2 class="font-poppins text-[32px] font-bold tracking-tight lg:text-[40px]">
+              What You&rsquo;ll Learn at <span class="text-brand-dark">SkillBridge</span>
+            </h2>
+            <p class="max-w-[640px] font-poppins text-[15px] leading-[1.7] font-medium text-darkblack/80 lg:text-[16px]">
+              Hands-on programs designed around the skills that actually get students hired.
+            </p>
+          </div>
+
+          <div class="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="group rounded-2xl border border-slate-100 bg-white p-8 shadow-[0_5px_10px_0_rgba(49,49,49,0.10)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_-15px_rgba(46,85,238,0.35)]">
+              <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-avaborder text-brand transition duration-300 group-hover:bg-brand group-hover:text-white">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-7 w-7"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6" /></svg>
+              </div>
+              <h3 class="mt-5 font-poppins text-[20px] font-semibold text-darkblack">Web Development</h3>
+              <p class="mt-2.5 font-poppins text-[14px] leading-[160%] font-medium text-darkblack/80">
+                Build real websites and applications from scratch and learn how the modern web actually works.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-full bg-avaborder px-3 py-1 text-[12px] font-semibold text-linkblue">HTML/CSS</span>
+                <span class="rounded-full bg-avaborder px-3 py-1 text-[12px] font-semibold text-linkblue">JavaScript</span>
+                <span class="rounded-full bg-avaborder px-3 py-1 text-[12px] font-semibold text-linkblue">React</span>
+                <span class="rounded-full bg-avaborder px-3 py-1 text-[12px] font-semibold text-linkblue">Git</span>
+              </div>
+            </div>
+
+            <div class="group rounded-2xl border border-slate-100 bg-white p-8 shadow-[0_5px_10px_0_rgba(49,49,49,0.10)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_-15px_rgba(46,85,238,0.35)]">
+              <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-avaborder text-brand transition duration-300 group-hover:bg-brand group-hover:text-white">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-7 w-7"><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M3 9h18M9 21V9" /></svg>
+              </div>
+              <h3 class="mt-5 font-poppins text-[20px] font-semibold text-darkblack">UI/UX Design</h3>
+              <p class="mt-2.5 font-poppins text-[14px] leading-[160%] font-medium text-darkblack/80">
+                Turn ideas into beautiful, usable products — from wireframes to polished prototypes.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-full bg-avaborder px-3 py-1 text-[12px] font-semibold text-linkblue">Figma</span>
+                <span class="rounded-full bg-avaborder px-3 py-1 text-[12px] font-semibold text-linkblue">Wireframing</span>
+                <span class="rounded-full bg-avaborder px-3 py-1 text-[12px] font-semibold text-linkblue">Prototyping</span>
+                <span class="rounded-full bg-avaborder px-3 py-1 text-[12px] font-semibold text-linkblue">Design Systems</span>
+              </div>
+            </div>
+
+            <div class="group rounded-2xl border border-slate-100 bg-white p-8 shadow-[0_5px_10px_0_rgba(49,49,49,0.10)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_-15px_rgba(46,85,238,0.35)]">
+              <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-avaborder text-brand transition duration-300 group-hover:bg-brand group-hover:text-white">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-7 w-7"><path d="M3 3v18h18" /><path d="m7 14 3-4 3 3 4-6" /></svg>
+              </div>
+              <h3 class="mt-5 font-poppins text-[20px] font-semibold text-darkblack">Data &amp; AI</h3>
+              <p class="mt-2.5 font-poppins text-[14px] leading-[160%] font-medium text-darkblack/80">
+                Learn Python, analyse real datasets, and understand the fundamentals of machine learning.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-full bg-avaborder px-3 py-1 text-[12px] font-semibold text-linkblue">Python</span>
+                <span class="rounded-full bg-avaborder px-3 py-1 text-[12px] font-semibold text-linkblue">pandas</span>
+                <span class="rounded-full bg-avaborder px-3 py-1 text-[12px] font-semibold text-linkblue">Visualisation</span>
+                <span class="rounded-full bg-avaborder px-3 py-1 text-[12px] font-semibold text-linkblue">ML Basics</span>
+              </div>
+            </div>
+
+            <div class="group rounded-2xl border border-slate-100 bg-white p-8 shadow-[0_5px_10px_0_rgba(49,49,49,0.10)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_-15px_rgba(46,85,238,0.35)]">
+              <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-avaborder text-brand transition duration-300 group-hover:bg-brand group-hover:text-white">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-7 w-7"><rect x="2" y="7" width="20" height="14" rx="2" /><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" /></svg>
+              </div>
+              <h3 class="mt-5 font-poppins text-[20px] font-semibold text-darkblack">Career Skills</h3>
+              <p class="mt-2.5 font-poppins text-[14px] leading-[160%] font-medium text-darkblack/80">
+                Master resumes, interviews, and networking so you can present yourself with confidence.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-full bg-avaborder px-3 py-1 text-[12px] font-semibold text-linkblue">Resume</span>
+                <span class="rounded-full bg-avaborder px-3 py-1 text-[12px] font-semibold text-linkblue">Interviews</span>
+                <span class="rounded-full bg-avaborder px-3 py-1 text-[12px] font-semibold text-linkblue">Networking</span>
+                <span class="rounded-full bg-avaborder px-3 py-1 text-[12px] font-semibold text-linkblue">Presenting</span>
+              </div>
+            </div>
+
+            <div class="group rounded-2xl border border-slate-100 bg-white p-8 shadow-[0_5px_10px_0_rgba(49,49,49,0.10)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_-15px_rgba(46,85,238,0.35)]">
+              <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-avaborder text-brand transition duration-300 group-hover:bg-brand group-hover:text-white">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-7 w-7"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 1 4 10.5c-.7.6-1 1.5-1 2.5h-6c0-1-.3-1.9-1-2.5A6 6 0 0 1 12 3z" /></svg>
+              </div>
+              <h3 class="mt-5 font-poppins text-[20px] font-semibold text-darkblack">Hackathons &amp; Projects</h3>
+              <p class="mt-2.5 font-poppins text-[14px] leading-[160%] font-medium text-darkblack/80">
+                Team up, prototype fast, and ship portfolio-ready projects under real deadlines.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-full bg-avaborder px-3 py-1 text-[12px] font-semibold text-linkblue">Teamwork</span>
+                <span class="rounded-full bg-avaborder px-3 py-1 text-[12px] font-semibold text-linkblue">Pitching</span>
+                <span class="rounded-full bg-avaborder px-3 py-1 text-[12px] font-semibold text-linkblue">Rapid Prototyping</span>
+              </div>
+            </div>
+
+            <div class="group rounded-2xl border border-slate-100 bg-white p-8 shadow-[0_5px_10px_0_rgba(49,49,49,0.10)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_-15px_rgba(46,85,238,0.35)]">
+              <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-avaborder text-brand transition duration-300 group-hover:bg-brand group-hover:text-white">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-7 w-7"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" /></svg>
+              </div>
+              <h3 class="mt-5 font-poppins text-[20px] font-semibold text-darkblack">Leadership &amp; Growth</h3>
+              <p class="mt-2.5 font-poppins text-[14px] leading-[160%] font-medium text-darkblack/80">
+                Build communication and mentorship skills while growing a network that lasts.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-full bg-avaborder px-3 py-1 text-[12px] font-semibold text-linkblue">Leadership</span>
+                <span class="rounded-full bg-avaborder px-3 py-1 text-[12px] font-semibold text-linkblue">Mentorship</span>
+                <span class="rounded-full bg-avaborder px-3 py-1 text-[12px] font-semibold text-linkblue">Communication</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- student journey -->
+      <section class="border-t border-slate-100 bg-gradient-to-b from-white to-avaborder/40">
+        <div class="mx-auto max-w-[1600px] px-6 py-12 lg:px-12 lg:py-16">
+          <div class="flex flex-col gap-3">
+            <div class="w-fit rounded-3xl bg-avaborder px-4 py-2 text-[15px] font-bold text-linkblue">YOUR JOURNEY</div>
+            <h2 class="font-poppins text-[32px] font-bold tracking-tight lg:text-[40px]">
+              How You Grow <span class="text-brand-dark">with Us</span>
+            </h2>
+          </div>
+
+          <div class="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="rounded-2xl border border-slate-100 bg-white p-8 shadow-[0_5px_10px_0_rgba(49,49,49,0.10)]">
+              <div class="flex h-12 w-12 items-center justify-center rounded-full bg-avaborder font-poppins text-[18px] font-bold text-brand">1</div>
+              <h3 class="mt-5 font-poppins text-[18px] font-semibold text-darkblack">Explore</h3>
+              <p class="mt-2 font-poppins text-[14px] leading-[160%] font-medium text-darkblack/80">
+                Browse workshops, internships, and scholarships that match your goals.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-100 bg-white p-8 shadow-[0_5px_10px_0_rgba(49,49,49,0.10)]">
+              <div class="flex h-12 w-12 items-center justify-center rounded-full bg-avaborder font-poppins text-[18px] font-bold text-brand">2</div>
+              <h3 class="mt-5 font-poppins text-[18px] font-semibold text-darkblack">Learn</h3>
+              <p class="mt-2 font-poppins text-[14px] leading-[160%] font-medium text-darkblack/80">
+                Join hands-on sessions led by industry mentors and build real skills.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-100 bg-white p-8 shadow-[0_5px_10px_0_rgba(49,49,49,0.10)]">
+              <div class="flex h-12 w-12 items-center justify-center rounded-full bg-avaborder font-poppins text-[18px] font-bold text-brand">3</div>
+              <h3 class="mt-5 font-poppins text-[18px] font-semibold text-darkblack">Apply</h3>
+              <p class="mt-2 font-poppins text-[14px] leading-[160%] font-medium text-darkblack/80">
+                Put your skills to work through internships, projects, and real clients.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-100 bg-white p-8 shadow-[0_5px_10px_0_rgba(49,49,49,0.10)]">
+              <div class="flex h-12 w-12 items-center justify-center rounded-full bg-avaborder font-poppins text-[18px] font-bold text-brand">4</div>
+              <h3 class="mt-5 font-poppins text-[18px] font-semibold text-darkblack">Grow</h3>
+              <p class="mt-2 font-poppins text-[14px] leading-[160%] font-medium text-darkblack/80">
+                Earn certificates, build your portfolio, and level up your career.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- why choose us -->
+      <section class="relative">
+        <div class="mx-auto grid max-w-[1600px] grid-cols-1 items-center gap-12 px-6 py-12 lg:grid-cols-2 lg:px-12 lg:py-16">
+          <div>
+            <div class="w-fit rounded-3xl bg-avaborder px-4 py-2 text-[15px] font-bold text-linkblue">WHY SKILLBRIDGE</div>
+            <h2 class="mt-3 font-poppins text-[32px] leading-[1.2] font-bold tracking-tight lg:text-[40px]">
+              Everything You Need to Go <span class="text-brand-dark">From Student to Professional</span>
+            </h2>
+            <p class="mt-4 max-w-[560px] font-poppins text-[15px] leading-[1.7] font-medium text-darkblack/80 lg:text-[16px]">
+              We don&rsquo;t just teach theory. We help you practice, build, and get noticed.
+            </p>
+            <ul class="mt-8 flex flex-col gap-4">
+              <li class="flex items-center gap-3.5">
+                <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-avaborder text-brand">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" class="h-4 w-4"><path d="m5 12 5 5L20 7" /></svg>
+                </span>
+                <span class="font-poppins text-[15px] font-semibold text-darkblack">Hands-on projects for every program</span>
+              </li>
+              <li class="flex items-center gap-3.5">
+                <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-avaborder text-brand">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" class="h-4 w-4"><path d="m5 12 5 5L20 7" /></svg>
+                </span>
+                <span class="font-poppins text-[15px] font-semibold text-darkblack">Mentors with real industry experience</span>
+              </li>
+              <li class="flex items-center gap-3.5">
+                <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-avaborder text-brand">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" class="h-4 w-4"><path d="m5 12 5 5L20 7" /></svg>
+                </span>
+                <span class="font-poppins text-[15px] font-semibold text-darkblack">Recognised certificates you can share</span>
+              </li>
+              <li class="flex items-center gap-3.5">
+                <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-avaborder text-brand">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" class="h-4 w-4"><path d="m5 12 5 5L20 7" /></svg>
+                </span>
+                <span class="font-poppins text-[15px] font-semibold text-darkblack">Direct access to hiring partner companies</span>
+              </li>
+            </ul>
+            <a
+              href="opportunities.html"
+              class="group mt-9 inline-flex h-[54px] items-center justify-center gap-3 rounded-full bg-gradient-to-r from-brand to-brand-dark px-8 text-[16px] font-semibold text-white shadow-lg shadow-brand/30 transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-brand/40"
+            >
+              Browse Opportunities
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="h-4.5 w-4.5 transition-transform group-hover:translate-x-1"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+            </a>
+          </div>
+
+          <div class="rounded-2xl border border-slate-100 bg-white p-8 shadow-[0_5px_10px_0_rgba(49,49,49,0.10)] lg:p-10">
+            <h3 class="font-poppins text-[22px] font-semibold text-darkblack">What you get</h3>
+            <div class="mt-6 flex flex-col gap-6">
+              <div class="flex items-start gap-4">
+                <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-avaborder text-brand">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-5.5 w-5.5"><circle cx="12" cy="9" r="6" /><path d="M8.5 15 7 22l5-2.5L17 22l-1.5-7" /></svg>
+                </div>
+                <div>
+                  <h4 class="font-poppins text-[16px] font-semibold text-darkblack">Certificates of completion</h4>
+                  <p class="mt-1 text-[14px] leading-[160%] font-medium text-[#5e5d5d]">Share verified certificates on LinkedIn and your resume.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-avaborder text-brand">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-5.5 w-5.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" /></svg>
+                </div>
+                <div>
+                  <h4 class="font-poppins text-[16px] font-semibold text-darkblack">Portfolio-ready projects</h4>
+                  <p class="mt-1 text-[14px] leading-[160%] font-medium text-[#5e5d5d]">Leave every program with real work you can show employers.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-avaborder text-brand">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-5.5 w-5.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" /></svg>
+                </div>
+                <div>
+                  <h4 class="font-poppins text-[16px] font-semibold text-darkblack">1-on-1 mentorship</h4>
+                  <p class="mt-1 text-[14px] leading-[160%] font-medium text-[#5e5d5d]">Get personal guidance from professionals who&rsquo;ve been where you are.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-avaborder text-brand">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-5.5 w-5.5"><path d="M21 12a9 9 0 0 1-9 9 9 9 0 0 1-9-9 9 9 0 0 1 9-9c3.3 0 6 1.7 7.6 4.2M21 3v4.2h-4.2" /></svg>
+                </div>
+                <div>
+                  <h4 class="font-poppins text-[16px] font-semibold text-darkblack">Career guidance</h4>
+                  <p class="mt-1 text-[14px] leading-[160%] font-medium text-[#5e5d5d]">Resume reviews, mock interviews, and referrals to partner companies.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- testimonials -->
+      <section class="border-t border-slate-100 bg-gradient-to-b from-white to-avaborder/40">
+        <div class="mx-auto max-w-[1600px] px-6 py-12 lg:px-12 lg:py-16">
+          <div class="flex flex-col gap-3">
+            <div class="w-fit rounded-3xl bg-avaborder px-4 py-2 text-[15px] font-bold text-linkblue">FROM OUR COMMUNITY</div>
+            <h2 class="font-poppins text-[32px] font-bold tracking-tight lg:text-[40px]">
+              Students on <span class="text-brand-dark">SkillBridge</span>
+            </h2>
+          </div>
+
+          <div class="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="flex flex-col gap-5 rounded-2xl border border-slate-100 bg-white p-8 shadow-[0_5px_10px_0_rgba(49,49,49,0.10)]">
+              <svg viewBox="0 0 24 24" fill="currentColor" class="h-8 w-8 text-azure"><path d="M10 7H6a3 3 0 0 0-3 3v4a3 3 0 0 0 3 3h1v-1a3 3 0 0 1 3-3v4h-4v3h4a3 3 0 0 0 3-3v-7a3 3 0 0 0-3-3z" /></svg>
+              <p class="font-poppins text-[15px] leading-[165%] font-medium text-darkblack/80">
+                &ldquo;SkillBridge workshops helped me land my first internship. The projects we built were exactly what interviewers wanted to see.&rdquo;
+              </p>
+              <div class="mt-auto flex items-center gap-3 border-t border-slate-100 pt-5">
+                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-brand to-azure font-poppins text-[15px] font-bold text-white">AT</div>
+                <div>
+                  <p class="font-poppins text-[15px] font-semibold text-darkblack">Aayush Thapa</p>
+                  <p class="text-[13px] font-medium text-[#6b6b6b]">Frontend Intern at TechNova</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-5 rounded-2xl border border-slate-100 bg-white p-8 shadow-[0_5px_10px_0_rgba(49,49,49,0.10)]">
+              <svg viewBox="0 0 24 24" fill="currentColor" class="h-8 w-8 text-azure"><path d="M10 7H6a3 3 0 0 0-3 3v4a3 3 0 0 0 3 3h1v-1a3 3 0 0 1 3-3v4h-4v3h4a3 3 0 0 0 3-3v-7a3 3 0 0 0-3-3z" /></svg>
+              <p class="font-poppins text-[15px] leading-[165%] font-medium text-darkblack/80">
+                &ldquo;The mentorship was a game-changer. I went from an empty portfolio to hired in just three months.&rdquo;
+              </p>
+              <div class="mt-auto flex items-center gap-3 border-t border-slate-100 pt-5">
+                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-azure to-skyish font-poppins text-[15px] font-bold text-white">PS</div>
+                <div>
+                  <p class="font-poppins text-[15px] font-semibold text-darkblack">Pooja Sharma</p>
+                  <p class="text-[13px] font-medium text-[#6b6b6b]">UI/UX Designer at PixelHouse</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-5 rounded-2xl border border-slate-100 bg-white p-8 shadow-[0_5px_10px_0_rgba(49,49,49,0.10)]">
+              <svg viewBox="0 0 24 24" fill="currentColor" class="h-8 w-8 text-azure"><path d="M10 7H6a3 3 0 0 0-3 3v4a3 3 0 0 0 3 3h1v-1a3 3 0 0 1 3-3v4h-4v3h4a3 3 0 0 0 3-3v-7a3 3 0 0 0-3-3z" /></svg>
+              <p class="font-poppins text-[15px] leading-[165%] font-medium text-darkblack/80">
+                &ldquo;I won a scholarship that covered my entire course. Now I give back by mentoring new students.&rdquo;
+              </p>
+              <div class="mt-auto flex items-center gap-3 border-t border-slate-100 pt-5">
+                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-brand-dark to-brand font-poppins text-[15px] font-bold text-white">SK</div>
+                <div>
+                  <p class="font-poppins text-[15px] font-semibold text-darkblack">Suman Karki</p>
+                  <p class="text-[13px] font-medium text-[#6b6b6b]">ML Engineer and Mentor</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- call to action -->
+      <section class="relative">
+        <div class="mx-auto max-w-[1600px] px-6 py-12 lg:px-12 lg:py-16">
+          <div class="flex flex-col items-center gap-8 rounded-3xl bg-gradient-to-r from-brand to-brand-dark px-8 py-14 text-center shadow-2xl shadow-brand/30 lg:flex-row lg:justify-between lg:px-14 lg:text-left">
+            <div>
+              <h2 class="font-poppins text-[28px] font-bold text-white lg:text-[36px]">Ready to start learning?</h2>
+              <p class="mt-2 max-w-[540px] text-[15px] leading-[165%] font-medium text-white/80">
+                Join thousands of students building skills, portfolios, and careers with SkillBridge. Your journey starts today.
+              </p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-4">
+              <a href="opportunities.html" class="flex h-[52px] items-center justify-center rounded-full bg-white px-7 text-[15px] font-semibold text-brand-dark shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl">Explore Opportunities</a>
+              <a href="workshops.html" class="flex h-[52px] items-center justify-center rounded-full border-2 border-white/40 px-7 text-[15px] font-semibold text-white transition hover:-translate-y-0.5 hover:border-white hover:bg-white/10">Browse Workshops</a>
+            </div>
           </div>
         </div>
       </section>
