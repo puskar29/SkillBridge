@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/src/assets/Favicon-skillbridge.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,7 +21,7 @@
         <div class="flex items-center justify-between gap-6 px-6 py-2.5 lg:px-12">
           <a href="../../index.html" class="group flex items-center gap-1.5 transition hover:opacity-90">
             <img
-              src="/src/assets/logos/Skill-logo.svg"
+              src="/src/assets/logos/logo-skillbridge.png"
               alt="SkillBridge logo"
               class="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105 lg:h-14"
             />
@@ -30,14 +30,14 @@
             </span>
           </a>
 
-          <nav class="hidden items-center gap-4 text-[15px] font-semibold text-darkblack lg:flex lg:gap-5 xl:gap-6">
+          <nav class="hidden items-center gap-3 text-[15px] font-semibold text-darkblack lg:flex xl:gap-4 2xl:gap-5">
             <a href="../../index.html" class="nav-link">Home</a>
             <a href="opportunities.html" class="nav-link">Opportunities</a>
-            <a href="workshops.html" class="nav-link active">Workshops</a>
-            <a href="internships.html" class="nav-link">Internships</a>
-            <a href="scholarships.html" class="nav-link">Scholarships</a>
             <a href="about.html" class="nav-link">About Us</a>
             <a href="contact.html" class="nav-link">Contact</a>
+            <a href="#" class="nav-link">Blog</a>
+            <a href="#" class="nav-link">Resources</a>
+            <a href="#" class="nav-link">FAQ</a>
           </nav>
 
           <div class="flex items-center gap-2.5 xl:gap-4">
@@ -59,6 +59,12 @@
                 </svg>
               </button>
             </form>
+            <a
+              href="student-panel.html"
+              class="flex h-[44px] w-[100px] items-center justify-center rounded-full border border-brand/30 bg-brand/5 text-[14px] font-semibold text-brand transition hover:-translate-y-0.5 hover:bg-brand hover:text-white"
+            >
+              Dashboard
+            </a>
             <a
               href="login.html"
               class="flex h-[44px] w-[84px] items-center justify-center rounded-full border border-darkblack/20 text-[15px] font-semibold text-darkblack transition hover:-translate-y-0.5 hover:border-brand hover:text-brand"
@@ -82,7 +88,7 @@
               <svg id="menu-open-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-6 w-6">
                 <path d="M4 6h16M4 12h16M4 18h16" />
               </svg>
-              <svg id="menu-close-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hidden h-6 w-6">
+              <svg id="menu-close-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="is-hidden h-6 w-6">
                 <path d="M6 6l12 12M18 6L6 18" />
               </svg>
             </button>
@@ -90,15 +96,16 @@
         </div>
 
         <!-- mobile menu -->
-        <div id="mobile-menu" class="hidden border-t border-slate-100 bg-white px-6 pt-4 pb-6 lg:hidden">
+        <div id="mobile-menu" class="is-hidden border-t border-slate-100 bg-white px-6 pt-4 pb-6 lg:hidden">
           <nav class="flex flex-col gap-1 text-[15px] font-semibold text-darkblack">
             <a href="../../index.html" class="nav-link rounded-lg px-3 py-2.5">Home</a>
             <a href="opportunities.html" class="nav-link rounded-lg px-3 py-2.5">Opportunities</a>
-            <a href="workshops.html" class="nav-link active rounded-lg bg-avaborder px-3 py-2.5">Workshops</a>
-            <a href="internships.html" class="nav-link rounded-lg px-3 py-2.5">Internships</a>
-            <a href="scholarships.html" class="nav-link rounded-lg px-3 py-2.5">Scholarships</a>
             <a href="about.html" class="nav-link rounded-lg px-3 py-2.5">About Us</a>
             <a href="contact.html" class="nav-link rounded-lg px-3 py-2.5">Contact</a>
+            <a href="#" class="nav-link rounded-lg px-3 py-2.5">Blog</a>
+            <a href="#" class="nav-link rounded-lg px-3 py-2.5">Resources</a>
+            <a href="#" class="nav-link rounded-lg px-3 py-2.5">FAQ</a>
+            <a href="student-panel.html" class="nav-link rounded-lg px-3 py-2.5">Dashboard</a>
           </nav>
           <div class="mt-5 flex items-center gap-3">
             <a href="login.html" class="flex h-11 flex-1 items-center justify-center rounded-full border border-darkblack/20 text-[15px] font-semibold text-darkblack transition hover:border-brand hover:text-brand">Login</a>
@@ -138,8 +145,12 @@
             <p class="mt-3 font-poppins text-[15px] leading-[150%] font-medium text-darkblack/80">
               Go from zero to a live website using HTML, CSS, and JavaScript.
             </p>
-            <a href="#" class="apply-link mt-4 inline-flex items-center gap-2 text-[15px] font-semibold text-brand transition hover:text-brand-dark" data-type="workshop" data-event="Web Development Bootcamp">
-              Register now
+            <a href="#" class="details-link mt-4 inline-flex items-center gap-2 text-[15px] font-semibold text-brand transition hover:text-brand-dark"
+              data-type="workshop" data-event="Web Development Bootcamp"
+              data-description="A hands-on workshop that takes you from zero to a live website. Learn HTML, CSS, and JavaScript by building projects with guidance from our mentors."
+              data-duration="4 weeks" data-mode="Online" data-deadline="Register by 20 Aug 2026"
+              data-perks="Certificate of completion | Build a live project | Mentor support | Lifetime access to materials">
+              View Details
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="h-4 w-4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
             </a>
           </div>
@@ -153,8 +164,12 @@
             <p class="mt-3 font-poppins text-[15px] leading-[150%] font-medium text-darkblack/80">
               Design a full app from wireframes to a polished Figma prototype.
             </p>
-            <a href="#" class="apply-link mt-4 inline-flex items-center gap-2 text-[15px] font-semibold text-brand transition hover:text-brand-dark" data-type="workshop" data-event="UI/UX Design Sprint">
-              Register now
+            <a href="#" class="details-link mt-4 inline-flex items-center gap-2 text-[15px] font-semibold text-brand transition hover:text-brand-dark"
+              data-type="workshop" data-event="UI/UX Design Sprint"
+              data-description="Design a complete app from wireframes to a polished Figma prototype. Work in small groups and get live feedback from working designers."
+              data-duration="2 weeks" data-mode="Online" data-deadline="Register by 15 Aug 2026"
+              data-perks="Certificate of completion | Portfolio piece | Design feedback | Figma template pack">
+              View Details
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="h-4 w-4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
             </a>
           </div>
@@ -168,8 +183,12 @@
             <p class="mt-3 font-poppins text-[15px] leading-[150%] font-medium text-darkblack/80">
               Explore Python, pandas, and visualisation with real datasets.
             </p>
-            <a href="#" class="apply-link mt-4 inline-flex items-center gap-2 text-[15px] font-semibold text-brand transition hover:text-brand-dark" data-type="workshop" data-event="Data Science Crash Course">
-              Register now
+            <a href="#" class="details-link mt-4 inline-flex items-center gap-2 text-[15px] font-semibold text-brand transition hover:text-brand-dark"
+              data-type="workshop" data-event="Data Science Crash Course"
+              data-description="Explore Python, pandas, and data visualisation using real datasets. Perfect for beginners who want to start a career in data."
+              data-duration="6 weeks" data-mode="Hybrid" data-deadline="Register by 22 Aug 2026"
+              data-perks="Certificate of completion | Hands-on datasets | Project notebook | Career Q&A session">
+              View Details
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="h-4 w-4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
             </a>
           </div>
@@ -183,8 +202,12 @@
             <p class="mt-3 font-poppins text-[15px] leading-[150%] font-medium text-darkblack/80">
               Build and train your first ML models and understand the fundamentals.
             </p>
-            <a href="#" class="apply-link mt-4 inline-flex items-center gap-2 text-[15px] font-semibold text-brand transition hover:text-brand-dark" data-type="workshop" data-event="AI &amp; Machine Learning Intro">
-              Register now
+            <a href="#" class="details-link mt-4 inline-flex items-center gap-2 text-[15px] font-semibold text-brand transition hover:text-brand-dark"
+              data-type="workshop" data-event="AI &amp; Machine Learning Intro"
+              data-description="Build and train your first machine learning models. Understand how models learn, and finish with a small project you can share."
+              data-duration="5 weeks" data-mode="Online" data-deadline="Register by 18 Aug 2026"
+              data-perks="Certificate of completion | Trained model project | GPU lab access | Mentorship">
+              View Details
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="h-4 w-4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
             </a>
           </div>
@@ -198,8 +221,12 @@
             <p class="mt-3 font-poppins text-[15px] leading-[150%] font-medium text-darkblack/80">
               Deliver confident talks, pitch ideas, and present like a pro.
             </p>
-            <a href="#" class="apply-link mt-4 inline-flex items-center gap-2 text-[15px] font-semibold text-brand transition hover:text-brand-dark" data-type="workshop" data-event="Public Speaking Mastery">
-              Register now
+            <a href="#" class="details-link mt-4 inline-flex items-center gap-2 text-[15px] font-semibold text-brand transition hover:text-brand-dark"
+              data-type="workshop" data-event="Public Speaking Mastery"
+              data-description="A one-day intensive to help you deliver confident talks, pitch ideas, and present like a pro — in class, at events, or in job interviews."
+              data-duration="1 day" data-mode="Onsite" data-deadline="Register by 12 Aug 2026"
+              data-perks="Certificate of completion | Personal feedback | Recording of your talk | Confidence toolkit">
+              View Details
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="h-4 w-4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
             </a>
           </div>
@@ -213,8 +240,12 @@
             <p class="mt-3 font-poppins text-[15px] leading-[150%] font-medium text-darkblack/80">
               Practice rapid prototyping and teamwork ahead of your next hackathon.
             </p>
-            <a href="#" class="apply-link mt-4 inline-flex items-center gap-2 text-[15px] font-semibold text-brand transition hover:text-brand-dark" data-type="workshop" data-event="Hackathon Bootcamp">
-              Register now
+            <a href="#" class="details-link mt-4 inline-flex items-center gap-2 text-[15px] font-semibold text-brand transition hover:text-brand-dark"
+              data-type="workshop" data-event="Hackathon Bootcamp"
+              data-description="Practice rapid prototyping, teamwork, and pitching ahead of your next hackathon. Form a team and build a demo in three days."
+              data-duration="3 days" data-mode="Onsite" data-deadline="Register by 10 Aug 2026"
+              data-perks="Certificate of completion | Team building | Pitch practice | Hackathon prep kit">
+              View Details
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="h-4 w-4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
             </a>
           </div>
@@ -251,7 +282,7 @@
           <!-- brand -->
           <div class="flex flex-col items-start gap-5">
             <a href="../../index.html" class="flex items-center gap-3">
-              <img src="/src/assets/logos/Skill-logo.svg" alt="SkillBridge logo" class="h-10 w-12 object-contain brightness-0 invert" />
+              <img src="/src/assets/logos/logo-skillbridge.png" alt="SkillBridge logo" class="h-10 w-12 object-contain brightness-0 invert" />
               <span class="font-poppins text-xl font-bold">SkillBridge</span>
             </a>
             <p class="max-w-[260px] text-[14px] leading-[170%] font-medium text-white/70">
@@ -340,8 +371,55 @@
     </div>
 
     
-      <!-- registration modal -->
-      <div id="register-modal" class="fixed inset-0 z-50 hidden items-center justify-center overflow-y-auto bg-darkblack/60 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="register-modal-title">
+      <!-- details modal -->
+    <div id="details-modal" class="modal-overlay fixed inset-0 z-50 items-center justify-center overflow-y-auto bg-darkblack/60 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="details-modal-title">
+      <div class="my-8 w-full max-w-2xl rounded-2xl border border-slate-100 bg-white p-6 shadow-2xl sm:p-8">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <span id="details-modal-badge" class="inline-block rounded-full bg-avaborder px-3 py-1 text-[12px] font-semibold text-linkblue"></span>
+            <h3 id="details-modal-title" class="mt-3 font-poppins text-[24px] leading-tight font-semibold text-darkblack"></h3>
+            <p id="details-modal-meta" class="mt-1 text-[14px] font-medium text-[#6b6b6b]"></p>
+          </div>
+          <button type="button" id="details-modal-close" aria-label="Close details" class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-200 text-darkgrey transition hover:border-brand hover:text-brand">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5"><path d="M6 6l12 12M18 6L6 18" /></svg>
+          </button>
+        </div>
+
+        <p id="details-modal-description" class="mt-5 font-poppins text-[15px] leading-[170%] font-medium text-darkblack/80"></p>
+
+        <div class="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-3">
+          <div class="rounded-xl border border-slate-100 bg-white p-3.5">
+            <p class="text-[12px] font-semibold tracking-wide text-[#8a8a8a] uppercase">Duration</p>
+            <p id="details-modal-duration" class="mt-1 font-poppins text-[15px] font-semibold text-darkblack"></p>
+          </div>
+          <div class="rounded-xl border border-slate-100 bg-white p-3.5">
+            <p class="text-[12px] font-semibold tracking-wide text-[#8a8a8a] uppercase">Mode</p>
+            <p id="details-modal-mode" class="mt-1 font-poppins text-[15px] font-semibold text-darkblack"></p>
+          </div>
+          <div class="rounded-xl border border-slate-100 bg-white p-3.5">
+            <p class="text-[12px] font-semibold tracking-wide text-[#8a8a8a] uppercase">Deadline</p>
+            <p id="details-modal-deadline" class="mt-1 font-poppins text-[15px] font-semibold text-darkblack"></p>
+          </div>
+        </div>
+
+        <div class="mt-4 rounded-xl bg-avaborder/60 p-4">
+          <p class="text-[13px] font-semibold text-darkblack">What you'll get</p>
+          <ul id="details-modal-perks" class="mt-2 list-disc space-y-1.5 pl-4 text-[14px] font-medium text-darkblack/80"></ul>
+        </div>
+
+        <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+          <button id="details-apply-button" type="button" class="flex h-[52px] flex-1 items-center justify-center rounded-full bg-gradient-to-r from-brand to-brand-dark text-[15px] font-semibold text-white shadow-lg shadow-brand/30 transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-brand/40">
+            Apply Now
+          </button>
+          <button id="details-cancel-button" type="button" class="flex h-[52px] w-full items-center justify-center rounded-full border border-darkblack/20 text-[15px] font-semibold text-darkblack transition hover:border-brand hover:text-brand sm:w-[140px]">
+            Maybe Later
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- registration modal -->
+      <div id="register-modal" class="modal-overlay fixed inset-0 z-50 items-center justify-center overflow-y-auto bg-darkblack/60 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="register-modal-title">
         <div class="my-8 w-full max-w-lg rounded-2xl border border-slate-100 bg-white p-6 shadow-2xl sm:p-8">
           <div class="flex items-start justify-between gap-4">
             <div>
@@ -378,7 +456,7 @@
               <input id="register-consent" type="checkbox" name="consent" class="mt-0.5 h-4 w-4 shrink-0 rounded accent-brand" required />
               I consent to being contacted by SkillBridge about this application.
             </label>
-            <div id="register-message" class="hidden rounded-xl px-4 py-3 text-[14px] font-medium"></div>
+            <div id="register-message" class="is-hidden rounded-xl" px-4 py-3 text-[14px] font-medium"></div>
             <button type="submit" class="flex h-[52px] items-center justify-center rounded-full bg-gradient-to-r from-brand to-brand-dark text-[15px] font-semibold text-white shadow-lg shadow-brand/30 transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-brand/40">
               Submit Application
             </button>

@@ -1,178 +1,361 @@
-// SkillBridge – login / signup page helpers (client-side only)
+/*
+ * SkillBridge — Login & Sign Up helpers
+ * -------------------------------------
+ * This file is client-side only for now. It validates the login and
+ * signup forms before anything is submitted and shows helpful messages
+ * while the user types.
+ *
+ * Later you can connect it to your own backend (PHP / Java / Node) and
+ * replace the "Demo" success messages with a real API call.
+ *
+ * Styling note:
+ * We only toggle small helper classes (is-hidden, is-invalid, ...) here.
+ * All the colours and sizes live in src/style.css.
+ */
 
-document.querySelectorAll('.password-toggle').forEach((btn) => {
-  btn.addEventListener('click', () => {
-    const input = document.getElementById(btn.dataset.target)
-    if (!input) return
-    const show = input.type === 'password'
-    input.type = show ? 'text' : 'password'
-    btn.classList.toggle('text-brand', show)
-    btn.setAttribute('aria-label', show ? 'Hide password' : 'Show password')
-    btn.querySelectorAll('svg').forEach((svg) => svg.classList.toggle('hidden'))
+// ---------------------------------------------------------------
+// 1. Show / hide the password with the little eye button
+// ---------------------------------------------------------------
+// A page can have more than one password field, so we find ALL the
+// eye buttons at once and attach a listener to each one.
+const toggleButtons = document.querySelectorAll('.password-toggle')
+
+toggleButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    // Each button knows which input it belongs to through a data attribute.
+    // In the HTML it looks like:  data-target="login-password"
+    const targetId = button.dataset.target
+    const passwordInput = document.getElementById(targetId)
+
+    // If the input is missing, there is nothing to do.
+    if (!passwordInput) return
+
+    if (passwordInput.type === 'password') {
+      // The password is hidden, so we show it as plain text.
+      passwordInput.type = 'text'
+
+      // Colour the button so the user can tell the password is visible.
+      button.classList.add('password-visible')
+
+      // Update the accessibility label for screen readers.
+      button.setAttribute('aria-label', 'Hide password')
+    } else {
+      // The password is visible, so we hide it again.
+      passwordInput.type = 'password'
+      button.classList.remove('password-visible')
+      button.setAttribute('aria-label', 'Show password')
+    }
+
+    // Swap the two icons: an open eye when visible, a crossed eye when hidden.
+    const icons = button.querySelectorAll('svg')
+    icons.forEach((icon) => icon.classList.toggle('is-hidden'))
   })
 })
 
-function setError(input, message) {
-  const wrapper = input.closest('label') || input.parentElement
-  let error = wrapper.querySelector('.field-error')
-  if (message) {
-    input.classList.add('border-[#e23b3b]', 'ring-2', 'ring-[#e23b3b]/20')
-    if (!error) {
-      error = document.createElement('span')
-      error.className = 'field-error text-[13px] font-medium text-[#e23b3b]'
-      wrapper.appendChild(error)
-    }
-    error.textContent = message
-  } else if (error) {
-    input.classList.remove('border-[#e23b3b]', 'ring-2', 'ring-[#e23b3b]/20')
-    error.remove()
-  }
-}
+// ---------------------------------------------------------------
+// 2. Small helpers used by the rest of the file
+// ---------------------------------------------------------------
 
-function showMessage(box, text, ok) {
-  if (!text) {
-    box.classList.add('hidden')
-    box.textContent = ''
-    return
-  }
-  box.classList.remove('hidden')
-  box.className = box.className.replace(/bg-\[\w+\]\/10|text-\[\w+\]/g, '').trim()
-  box.classList.add(ok ? 'bg-green-50' : 'bg-red-50', ok ? 'text-green-700' : 'text-red-600')
-  box.textContent = text
-}
-
-function validateEmail(value) {
+// Does the value look like a valid email address?
+const isValidEmail = (value) => {
   return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value)
 }
 
+// Does the value look like a valid phone number? (kept loose on purpose)
+const isValidPhone = (value) => {
+  return /^[+\d][\d\s()-]{6,}$/.test(value)
+}
+
+/*
+ * Show an error under a form field (or remove it with an empty message).
+ * The red border comes from the .is-invalid class in style.css, and the
+ * message text from .field-error.
+ */
+const setError = (input, message) => {
+  // The error message lives inside the same <label> that wraps the input.
+  // If there is no <label>, we fall back to the input's parent element.
+  let wrapper = input.closest('label')
+  if (!wrapper) {
+    wrapper = input.parentElement
+  }
+  let error = wrapper.querySelector('.field-error')
+
+  if (message) {
+    // 1. Turn the input border red so it stands out.
+    input.classList.add('is-invalid')
+
+    // 2. Create the message element only if it does not exist yet.
+    if (!error) {
+      error = document.createElement('span')
+      error.className = 'field-error'
+      wrapper.appendChild(error)
+    }
+    error.textContent = message
+  } else {
+    // An empty message means the field is fine now: remove the styles.
+    input.classList.remove('is-invalid')
+    if (error) {
+      error.remove()
+    }
+  }
+}
+
+/*
+ * Show a notice box on the page.
+ *  - box  = the <div> that holds the message
+ *  - text = what to display (an empty string hides the box)
+ *  - ok   = true for a success (green) message, false for an error (red)
+ */
+const showMessage = (box, text, ok) => {
+  // Clear any old colours first so they never pile up.
+  box.classList.remove('message-success', 'message-error')
+
+  if (!text) {
+    box.classList.add('is-hidden')
+    box.textContent = ''
+    return
+  }
+
+  box.classList.remove('is-hidden')
+
+  if (ok) {
+    box.classList.add('message-success')
+  } else {
+    box.classList.add('message-error')
+  }
+
+  box.textContent = text
+}
+
+// ---------------------------------------------------------------
+// 3. Login form
+// ---------------------------------------------------------------
 const loginForm = document.getElementById('login-form')
+
 if (loginForm) {
-  const email = document.getElementById('login-email')
-  const password = document.getElementById('login-password')
-  const message = document.getElementById('login-message')
+  // Grab the fields we care about.
+  const emailInput = document.getElementById('login-email')
+  const passwordInput = document.getElementById('login-password')
+  const messageBox = document.getElementById('login-message')
 
-  email.addEventListener('input', () => setError(email, email.value && !validateEmail(email.value) ? 'Enter a valid email address.' : ''))
-  password.addEventListener('input', () => setError(password, ''))
+  // Give live feedback while the user types.
+  emailInput.addEventListener('input', () => {
+    const value = emailInput.value.trim()
 
-  loginForm.addEventListener('submit', (e) => {
-    e.preventDefault()
-    let ok = true
-    if (!email.value) {
-      setError(email, 'Email is required.')
-      ok = false
-    } else if (!validateEmail(email.value)) {
-      setError(email, 'Enter a valid email address.')
-      ok = false
+    if (value !== '' && !isValidEmail(value)) {
+      setError(emailInput, 'Enter a valid email address.')
+    } else {
+      setError(emailInput, '')
     }
-    if (!password.value) {
-      setError(password, 'Password is required.')
-      ok = false
-    } else if (password.value.length < 6) {
-      setError(password, 'Password must be at least 6 characters.')
-      ok = false
+  })
+
+  passwordInput.addEventListener('input', () => setError(passwordInput, ''))
+
+  // When the form is submitted we run our own checks first.
+  loginForm.addEventListener('submit', (event) => {
+    // preventDefault stops the page from reloading so we can handle it here.
+    event.preventDefault()
+
+    let formIsValid = true
+
+    // Check the email.
+    if (emailInput.value.trim() === '') {
+      setError(emailInput, 'Email is required.')
+      formIsValid = false
+    } else if (!isValidEmail(emailInput.value)) {
+      setError(emailInput, 'Enter a valid email address.')
+      formIsValid = false
     }
-    if (!ok) {
-      showMessage(message, 'Please fix the highlighted fields above.', false)
+
+    // Check the password.
+    if (passwordInput.value === '') {
+      setError(passwordInput, 'Password is required.')
+      formIsValid = false
+    } else if (passwordInput.value.length < 6) {
+      setError(passwordInput, 'Password must be at least 6 characters.')
+      formIsValid = false
+    }
+
+    // If anything failed, show one message and stop.
+    if (!formIsValid) {
+      showMessage(messageBox, 'Please fix the highlighted fields above.', false)
       return
     }
-    showMessage(message, 'Sign in successful! (Demo — connect a backend to authenticate.)', true)
+
+    // Everything looks good!
+    // (Demo only — replace this with a call to your backend later.)
+    showMessage(messageBox, 'Sign in successful! (Demo — connect a backend to authenticate.)', true)
     loginForm.reset()
   })
 }
 
+// ---------------------------------------------------------------
+// 4. Sign up form
+// ---------------------------------------------------------------
 const signupForm = document.getElementById('signup-form')
-if (signupForm) {
-  const name = document.getElementById('signup-name')
-  const email = document.getElementById('signup-email')
-  const phone = document.getElementById('signup-phone')
-  const password = document.getElementById('signup-password')
-  const confirm = document.getElementById('signup-confirm')
-  const terms = document.getElementById('signup-terms')
-  const message = document.getElementById('signup-message')
-  const strength = document.getElementById('signup-strength')
 
-  const checks = [
-    { test: (v) => v.length >= 8, label: 'at least 8 characters' },
-    { test: (v) => /[a-z]/.test(v), label: 'a lowercase letter' },
-    { test: (v) => /[A-Z]/.test(v), label: 'an uppercase letter' },
-    { test: (v) => /\d/.test(v), label: 'a number' },
+if (signupForm) {
+  const nameInput = document.getElementById('signup-name')
+  const emailInput = document.getElementById('signup-email')
+  const phoneInput = document.getElementById('signup-phone')
+  const passwordInput = document.getElementById('signup-password')
+  const confirmInput = document.getElementById('signup-confirm')
+  const termsCheckbox = document.getElementById('signup-terms')
+  const messageBox = document.getElementById('signup-message')
+  const strengthBox = document.getElementById('signup-strength')
+
+  // A list of rules a good password should pass. Each entry is a test
+  // function that receives the password and returns true or false.
+  const passwordRules = [
+    { test: (value) => value.length >= 8, label: 'at least 8 characters' },
+    { test: (value) => /[a-z]/.test(value), label: 'a lowercase letter' },
+    { test: (value) => /[A-Z]/.test(value), label: 'an uppercase letter' },
+    { test: (value) => /\d/.test(value), label: 'a number' },
   ]
 
-  function updateStrength() {
-    const value = password.value
+  // Count how many rules a password passes, using a simple loop.
+  const countPassedRules = (value) => {
+    let count = 0
+    passwordRules.forEach((rule) => {
+      if (rule.test(value)) {
+        count = count + 1
+      }
+    })
+    return count
+  }
+
+  // Update the "Weak / Good / Strong" hint while the user types.
+  const updatePasswordStrength = () => {
+    const value = passwordInput.value
+
+    // No password typed yet → hide the hint.
     if (!value) {
-      strength.classList.add('hidden')
+      strengthBox.classList.add('is-hidden')
       return
     }
-    const passed = checks.filter((c) => c.test(value)).length
-    strength.classList.remove('hidden')
-    if (passed <= 1) {
-      strength.textContent = 'Weak password'
-      strength.className = 'text-[13px] font-medium text-red-500'
-    } else if (passed <= 3) {
-      strength.textContent = 'Good password'
-      strength.className = 'text-[13px] font-medium text-amber-500'
+
+    // How many rules does the current password pass?
+    const passedRules = countPassedRules(value)
+
+    // Reset the previous colour, then pick a new one.
+    strengthBox.classList.remove('is-hidden', 'strength-weak', 'strength-good', 'strength-strong')
+
+    if (passedRules <= 1) {
+      strengthBox.textContent = 'Weak password'
+      strengthBox.classList.add('strength-weak')
+    } else if (passedRules <= 3) {
+      strengthBox.textContent = 'Good password'
+      strengthBox.classList.add('strength-good')
     } else {
-      strength.textContent = 'Strong password'
-      strength.className = 'text-[13px] font-medium text-green-600'
+      strengthBox.textContent = 'Strong password'
+      strengthBox.classList.add('strength-strong')
     }
   }
 
-  name.addEventListener('input', () => setError(name, ''))
-  email.addEventListener('input', () => setError(email, email.value && !validateEmail(email.value) ? 'Enter a valid email address.' : ''))
-  phone.addEventListener('input', () => setError(phone, phone.value && !/^[+\d][\d\s()-]{6,}$/.test(phone.value) ? 'Enter a valid phone number.' : ''))
-  password.addEventListener('input', () => {
-    setError(password, '')
-    updateStrength()
-    if (confirm.value) {
-      setError(confirm, password.value === confirm.value ? '' : 'Passwords do not match.')
+  // Live validation while typing.
+  nameInput.addEventListener('input', () => setError(nameInput, ''))
+
+  emailInput.addEventListener('input', () => {
+    const value = emailInput.value.trim()
+
+    if (value !== '' && !isValidEmail(value)) {
+      setError(emailInput, 'Enter a valid email address.')
+    } else {
+      setError(emailInput, '')
     }
   })
-  confirm.addEventListener('input', () => setError(confirm, password.value !== confirm.value ? 'Passwords do not match.' : ''))
-  terms.addEventListener('change', () => setError(terms, ''))
 
-  signupForm.addEventListener('submit', (e) => {
-    e.preventDefault()
-    let ok = true
-    if (!name.value) {
-      setError(name, 'Full name is required.')
-      ok = false
+  phoneInput.addEventListener('input', () => {
+    const value = phoneInput.value.trim()
+
+    if (value !== '' && !isValidPhone(value)) {
+      setError(phoneInput, 'Enter a valid phone number.')
+    } else {
+      setError(phoneInput, '')
     }
-    if (!email.value) {
-      setError(email, 'Email is required.')
-      ok = false
-    } else if (!validateEmail(email.value)) {
-      setError(email, 'Enter a valid email address.')
-      ok = false
+  })
+
+  passwordInput.addEventListener('input', () => {
+    setError(passwordInput, '')
+    updatePasswordStrength()
+
+    // If the user already typed a confirmation, re-check it too.
+    if (confirmInput.value) {
+      if (passwordInput.value === confirmInput.value) {
+        setError(confirmInput, '')
+      } else {
+        setError(confirmInput, 'Passwords do not match.')
+      }
     }
-    if (phone.value && !/^[+\d][\d\s()-]{6,}$/.test(phone.value)) {
-      setError(phone, 'Enter a valid phone number.')
-      ok = false
+  })
+
+  confirmInput.addEventListener('input', () => {
+    if (passwordInput.value !== confirmInput.value) {
+      setError(confirmInput, 'Passwords do not match.')
+    } else {
+      setError(confirmInput, '')
     }
-    if (!password.value) {
-      setError(password, 'Password is required.')
-      ok = false
-    } else if (checks.filter((c) => c.test(password.value)).length < 3) {
-      setError(password, 'Use at least 8 characters with uppercase, lowercase, and a number.')
-      ok = false
+  })
+
+  termsCheckbox.addEventListener('change', () => setError(termsCheckbox, ''))
+
+  // Validate everything when the form is submitted.
+  signupForm.addEventListener('submit', (event) => {
+    event.preventDefault()
+
+    let formIsValid = true
+
+    if (nameInput.value.trim() === '') {
+      setError(nameInput, 'Full name is required.')
+      formIsValid = false
     }
-    if (!confirm.value) {
-      setError(confirm, 'Please confirm your password.')
-      ok = false
-    } else if (password.value !== confirm.value) {
-      setError(confirm, 'Passwords do not match.')
-      ok = false
+
+    if (emailInput.value.trim() === '') {
+      setError(emailInput, 'Email is required.')
+      formIsValid = false
+    } else if (!isValidEmail(emailInput.value)) {
+      setError(emailInput, 'Enter a valid email address.')
+      formIsValid = false
     }
-    if (!terms.checked) {
-      setError(terms, 'Please accept the Terms of Service and Privacy Policy.')
-      ok = false
+
+    if (phoneInput.value && !isValidPhone(phoneInput.value)) {
+      setError(phoneInput, 'Enter a valid phone number.')
+      formIsValid = false
     }
-    if (!ok) {
-      showMessage(message, 'Please fix the highlighted fields above.', false)
+
+    const passedPasswordRules = countPassedRules(passwordInput.value)
+
+    if (passwordInput.value === '') {
+      setError(passwordInput, 'Password is required.')
+      formIsValid = false
+    } else if (passedPasswordRules < 3) {
+      setError(passwordInput, 'Use at least 8 characters with uppercase, lowercase, and a number.')
+      formIsValid = false
+    }
+
+    if (confirmInput.value === '') {
+      setError(confirmInput, 'Please confirm your password.')
+      formIsValid = false
+    } else if (passwordInput.value !== confirmInput.value) {
+      setError(confirmInput, 'Passwords do not match.')
+      formIsValid = false
+    }
+
+    if (!termsCheckbox.checked) {
+      setError(termsCheckbox, 'Please accept the Terms of Service and Privacy Policy.')
+      formIsValid = false
+    }
+
+    // If anything failed, show one message and stop.
+    if (!formIsValid) {
+      showMessage(messageBox, 'Please fix the highlighted fields above.', false)
       return
     }
-    showMessage(message, 'Account created! (Demo — connect a backend to finish registration.)', true)
+
+    // Everything looks good!
+    // (Demo only — replace this with a call to your backend later.)
+    showMessage(messageBox, 'Account created! (Demo — connect a backend to finish registration.)', true)
     signupForm.reset()
-    strength.classList.add('hidden')
+    strengthBox.classList.add('is-hidden')
   })
 }

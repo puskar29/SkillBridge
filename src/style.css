@@ -200,3 +200,81 @@
   background: #f8fbff;
 }
 
+/* ---------------------------------------------------------------
+   State helpers used by the JavaScript
+   The JS files (main.js / auth.js / register.js) only toggle these
+   small semantic class names. All the real styling lives here in one
+   place, so if you ever want to restyle the app you only change CSS.
+---------------------------------------------------------------- */
+
+/* A generic "hide this element" toggle.
+   The !important guarantees it always beats Tailwind's display
+   utilities like "flex" or "block". */
+.is-hidden {
+  display: none !important;
+}
+
+/* Mobile drawer (panel pages): slides in from the left when open.
+   On large screens the sidebar is already visible thanks to the
+   lg:translate-x-0 utility — this rule just matches that position. */
+#panel-sidebar.is-open {
+  transform: translateX(0);
+}
+
+/* Registration modal overlay: hidden until .is-open is added.
+   The centring, blur and dark background stay in the HTML. */
+.modal-overlay {
+  display: none;
+}
+.modal-overlay.is-open {
+  display: flex;
+}
+
+/* Password eye button turns brand-coloured while the password is shown. */
+.password-visible {
+  color: var(--color-brand);
+}
+
+/* A form field with an error: red border + a soft red ring. */
+.form-input.is-invalid {
+  border-color: #e23b3b;
+  box-shadow: 0 0 0 2px rgba(226, 59, 59, 0.2);
+}
+
+/* The small red message that appears under a field. */
+.field-error {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #e23b3b;
+}
+
+/* Notice boxes on the auth pages: green = success, red = error. */
+.message-success {
+  background-color: #f0fdf4;
+  color: #15803d;
+}
+
+/* Notice box on the registration modal: light blue = success. */
+.message-info {
+  background-color: var(--color-avaborder);
+  color: var(--color-brand-dark);
+}
+
+/* Shared red "error" notice box. */
+.message-error {
+  background-color: #fef2f2;
+  color: #dc2626;
+}
+
+/* Password strength hint colours. */
+.strength-weak {
+  color: #ef4444;
+}
+.strength-good {
+  color: #f59e0b;
+}
+.strength-strong {
+  color: #16a34a;
+}
+

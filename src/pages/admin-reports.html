@@ -11,7 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/src/style.css" />
-    <title>SkillBridge — Admin Panel</title>
+    <title>SkillBridge — Reports | Admin Panel</title>
   </head>
   <body class="bg-avaborder/40 font-sans text-darkblack antialiased">
 
@@ -35,7 +35,7 @@
       </div>
 
       <nav class="mt-8 flex flex-1 flex-col gap-1.5 px-4">
-        <a href="admin-panel.html" class="sidebar-link active">
+        <a href="admin-panel.html" class="sidebar-link">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5"><rect x="3" y="3" width="7" height="9" rx="1.5" /><rect x="14" y="3" width="7" height="5" rx="1.5" /><rect x="14" y="12" width="7" height="9" rx="1.5" /><rect x="3" y="16" width="7" height="5" rx="1.5" /></svg>
           Dashboard
         </a>
@@ -55,7 +55,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5"><rect x="2" y="5" width="20" height="14" rx="2" /><path d="M2 10h20" /></svg>
           Payments
         </a>
-        <a href="admin-reports.html" class="sidebar-link">
+        <a href="admin-reports.html" class="sidebar-link active">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5"><path d="M3 3v18h18" /><path d="m19 9-5 5-4-4-3 3" /></svg>
           Reports
         </a>
@@ -91,7 +91,9 @@
               </svg>
             </button>
             <div class="hidden items-center gap-2 text-[15px] font-medium text-darkgrey sm:flex">
-              <span>Admin Panel</span>
+              <a href="admin-panel.html" class="transition hover:text-brand">Admin Panel</a>
+              <span>/</span>
+              <span class="text-darkblack">Reports</span>
             </div>
           </div>
 
@@ -100,8 +102,7 @@
               <input
                 id="panel-search"
                 type="search"
-                data-target="#users-tbody tr"
-                placeholder="Search students"
+                placeholder="Search reports"
                 class="h-full w-full bg-transparent text-[13px] font-medium text-darkblack outline-none placeholder:text-darkgrey"
               />
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="ml-2 h-4.5 w-4.5 shrink-0 text-darkgrey">
@@ -129,33 +130,36 @@
 
       <!-- content -->
       <main class="px-6 py-8 lg:px-10 lg:py-10">
-        <div class="mb-8">
-          <h1 class="font-poppins text-[26px] font-bold tracking-tight lg:text-[32px]">
-            Admin <span class="text-brand-dark">Overview</span>
-          </h1>
-          <p class="mt-1.5 text-[15px] font-medium text-darkgrey">Monitor users, opportunities, and registrations across the platform.</p>
+        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <h1 class="font-poppins text-[26px] font-bold tracking-tight lg:text-[32px]">
+              Reports &amp; <span class="text-brand-dark">Analytics</span>
+            </h1>
+            <p class="mt-1.5 text-[15px] font-medium text-darkgrey">Platform insights, trends, and performance summaries.</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <select class="h-[42px] rounded-full border border-slate-200 bg-white px-4 text-[14px] font-semibold text-darkblack outline-none transition focus:border-brand">
+              <option>Last 12 months</option>
+              <option>Last 6 months</option>
+              <option>Last 30 days</option>
+            </select>
+            <button type="button" class="flex h-[42px] items-center justify-center gap-2 rounded-full bg-gradient-to-r from-brand to-brand-dark px-6 text-[14px] font-semibold text-white shadow-lg shadow-brand/30 transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-brand/40">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="h-4.5 w-4.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><path d="m7 10 5 5 5-5M12 15V3" /></svg>
+              Export
+            </button>
+          </div>
         </div>
 
         <!-- stats -->
-        <div class="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+        <div class="mt-8 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
           <div class="stat-card">
             <div class="stat-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-6 w-6"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" /></svg>
             </div>
             <div>
-              <span class="block text-[13px] font-semibold text-darkgrey">Total Users</span>
-              <span class="block font-poppins text-[28px] font-bold text-darkblack">1,248</span>
-              <span class="block text-[12px] font-semibold text-green-600">+12% this month</span>
-            </div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-6 w-6"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4" /><circle cx="9" cy="20" r="1" /><circle cx="18" cy="20" r="1" /></svg>
-            </div>
-            <div>
-              <span class="block text-[13px] font-semibold text-darkgrey">Active Opportunities</span>
-              <span class="block font-poppins text-[28px] font-bold text-darkblack">86</span>
-              <span class="block text-[12px] font-semibold text-green-600">+6 new this week</span>
+              <span class="block text-[13px] font-semibold text-darkgrey">New Users</span>
+              <span class="block font-poppins text-[28px] font-bold text-darkblack">+312</span>
+              <span class="block text-[12px] font-semibold text-green-600">+12% vs last period</span>
             </div>
           </div>
           <div class="stat-card">
@@ -163,9 +167,9 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-6 w-6"><path d="M9 11l3 3 8-8" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
             </div>
             <div>
-              <span class="block text-[13px] font-semibold text-darkgrey">Total Registrations</span>
-              <span class="block font-poppins text-[28px] font-bold text-darkblack">3,402</span>
-              <span class="block text-[12px] font-semibold text-green-600">+18% this month</span>
+              <span class="block text-[13px] font-semibold text-darkgrey">Registrations</span>
+              <span class="block font-poppins text-[28px] font-bold text-darkblack">684</span>
+              <span class="block text-[12px] font-semibold text-green-600">+18% vs last period</span>
             </div>
           </div>
           <div class="stat-card">
@@ -174,23 +178,30 @@
             </div>
             <div>
               <span class="block text-[13px] font-semibold text-darkgrey">Revenue</span>
-              <span class="block font-poppins text-[28px] font-bold text-brand-dark">$52,400</span>
-              <span class="block text-[12px] font-semibold text-green-600">+9% this month</span>
+              <span class="block font-poppins text-[28px] font-bold text-brand-dark">$52.4K</span>
+              <span class="block text-[12px] font-semibold text-green-600">+9% vs last period</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-6 w-6"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" /><path d="M13.7 21a2 2 0 0 1-3.4 0" /></svg>
+            </div>
+            <div>
+              <span class="block text-[13px] font-semibold text-darkgrey">Active Students</span>
+              <span class="block font-poppins text-[28px] font-bold text-darkblack">4,870</span>
+              <span class="block text-[12px] font-semibold text-green-600">+5% vs last period</span>
             </div>
           </div>
         </div>
 
-        <!-- main grid -->
+        <!-- charts row -->
         <div class="mt-8 grid gap-8 xl:grid-cols-3">
-          <!-- chart -->
+          <!-- registrations chart -->
           <section class="rounded-2xl border border-slate-100 bg-white p-6 shadow-[0_5px_10px_0_rgba(49,49,49,0.08)] xl:col-span-2">
             <div class="mb-5 flex items-center justify-between">
-              <h2 class="font-poppins text-[20px] font-semibold text-darkblack">Registrations</h2>
-              <div class="flex items-center gap-2">
-                <span class="rounded-full bg-avaborder px-3 py-1 text-[13px] font-semibold text-linkblue">Last 6 months</span>
-              </div>
+              <h2 class="font-poppins text-[20px] font-semibold text-darkblack">Registrations Trend</h2>
+              <span class="rounded-full bg-avaborder px-3 py-1 text-[13px] font-semibold text-linkblue">Monthly</span>
             </div>
-
             <div class="flex h-56 items-end justify-between gap-3 sm:gap-4">
               <div class="flex flex-1 flex-col items-center gap-2">
                 <span class="text-[12px] font-semibold text-darkgrey">180</span>
@@ -218,20 +229,18 @@
                 <span class="text-[12px] font-medium text-darkgrey">Jul</span>
               </div>
               <div class="flex flex-1 flex-col items-center gap-2">
-                <span class="text-[12px] font-semibold text-brand-dark">480</span>
-                <div class="w-full max-w-[46px] rounded-t-xl bg-gradient-to-t from-brand-dark to-brand shadow-[0_8px_20px_-8px_rgba(46,85,238,0.7)]" style="height: 84%"></div>
+                <span class="text-[12px] font-semibold text-brand-dark">684</span>
+                <div class="w-full max-w-[46px] rounded-t-xl bg-gradient-to-t from-brand-dark to-brand shadow-[0_8px_20px_-8px_rgba(46,85,238,0.7)]" style="height: 100%"></div>
                 <span class="text-[12px] font-medium text-darkgrey">Aug</span>
               </div>
             </div>
           </section>
 
-          <!-- top categories -->
+          <!-- category donut summary -->
           <section class="rounded-2xl border border-slate-100 bg-white p-6 shadow-[0_5px_10px_0_rgba(49,49,49,0.08)]">
             <div class="mb-5 flex items-center justify-between">
-              <h2 class="font-poppins text-[20px] font-semibold text-darkblack">Top Categories</h2>
-              <a href="admin-reports.html" class="text-[14px] font-semibold text-linkblue transition hover:underline">View all</a>
+              <h2 class="font-poppins text-[20px] font-semibold text-darkblack">Registrations by Type</h2>
             </div>
-
             <div class="flex flex-col gap-5">
               <div>
                 <div class="mb-2 flex items-center justify-between text-[14px] font-semibold">
@@ -270,88 +279,85 @@
                 </div>
               </div>
             </div>
-
-            <div class="mt-6 rounded-xl bg-gradient-to-br from-brand to-brand-dark p-5 text-white">
-              <p class="font-poppins text-[15px] font-semibold">Need to post an opportunity?</p>
-              <p class="mt-1 text-[13px] font-medium text-white/75">Publish internships, events, or scholarships in minutes.</p>
-              <a href="admin-opportunities.html" class="mt-4 flex h-[42px] items-center justify-center rounded-full bg-white px-5 text-[14px] font-semibold text-brand-dark transition hover:-translate-y-0.5 hover:shadow-lg">
-                + New Opportunity
-              </a>
-            </div>
           </section>
         </div>
 
-        <!-- recent users -->
-        <section class="mt-8 rounded-2xl border border-slate-100 bg-white p-6 shadow-[0_5px_10px_0_rgba(49,49,49,0.08)]">
-          <div class="mb-5 flex items-center justify-between">
-            <h2 class="font-poppins text-[20px] font-semibold text-darkblack">Recent Users</h2>
-            <a href="admin-users.html" class="text-[14px] font-semibold text-linkblue transition hover:underline">Manage users</a>
-          </div>
+        <!-- second row -->
+        <div class="mt-8 grid gap-8 xl:grid-cols-3">
+          <!-- revenue chart -->
+          <section class="rounded-2xl border border-slate-100 bg-white p-6 shadow-[0_5px_10px_0_rgba(49,49,49,0.08)] xl:col-span-2">
+            <div class="mb-5 flex items-center justify-between">
+              <h2 class="font-poppins text-[20px] font-semibold text-darkblack">Revenue by Month</h2>
+              <span class="rounded-full bg-green-100 px-3 py-1 text-[13px] font-semibold text-green-700">Growing</span>
+            </div>
+            <div class="flex h-56 items-end justify-between gap-3 sm:gap-4">
+              <div class="flex flex-1 flex-col items-center gap-2">
+                <span class="text-[12px] font-semibold text-darkgrey">$3.1K</span>
+                <div class="w-full max-w-[46px] rounded-t-xl bg-gradient-to-t from-azure to-skyish" style="height: 30%"></div>
+                <span class="text-[12px] font-medium text-darkgrey">Mar</span>
+              </div>
+              <div class="flex flex-1 flex-col items-center gap-2">
+                <span class="text-[12px] font-semibold text-darkgrey">$4.8K</span>
+                <div class="w-full max-w-[46px] rounded-t-xl bg-gradient-to-t from-azure to-skyish" style="height: 46%"></div>
+                <span class="text-[12px] font-medium text-darkgrey">Apr</span>
+              </div>
+              <div class="flex flex-1 flex-col items-center gap-2">
+                <span class="text-[12px] font-semibold text-darkgrey">$6.2K</span>
+                <div class="w-full max-w-[46px] rounded-t-xl bg-gradient-to-t from-azure to-skyish" style="height: 60%"></div>
+                <span class="text-[12px] font-medium text-darkgrey">May</span>
+              </div>
+              <div class="flex flex-1 flex-col items-center gap-2">
+                <span class="text-[12px] font-semibold text-darkgrey">$8.0K</span>
+                <div class="w-full max-w-[46px] rounded-t-xl bg-gradient-to-t from-azure to-skyish" style="height: 77%"></div>
+                <span class="text-[12px] font-medium text-darkgrey">Jun</span>
+              </div>
+              <div class="flex flex-1 flex-col items-center gap-2">
+                <span class="text-[12px] font-semibold text-darkgrey">$9.5K</span>
+                <div class="w-full max-w-[46px] rounded-t-xl bg-gradient-to-t from-azure to-skyish" style="height: 91%"></div>
+                <span class="text-[12px] font-medium text-darkgrey">Jul</span>
+              </div>
+              <div class="flex flex-1 flex-col items-center gap-2">
+                <span class="text-[12px] font-semibold text-brand-dark">$10.4K</span>
+                <div class="w-full max-w-[46px] rounded-t-xl bg-gradient-to-t from-brand-dark to-brand shadow-[0_8px_20px_-8px_rgba(46,85,238,0.7)]" style="height: 100%"></div>
+                <span class="text-[12px] font-medium text-darkgrey">Aug</span>
+              </div>
+            </div>
+          </section>
 
-          <div class="overflow-x-auto">
-            <table class="data-table min-w-[720px]">
-              <thead>
-                <tr>
-                  <th>User</th>
-                  <th>Email</th>
-                  <th>Role</th>
-                  <th>Joined</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
-              <tbody id="users-tbody">
-                <tr>
-                  <td>
-                    <div class="flex items-center gap-3">
-                      <div class="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-brand to-brand-dark font-poppins text-[14px] font-bold text-white">A</div>
-                      <span class="font-poppins font-semibold">Anisha K.</span>
-                    </div>
-                  </td>
-                  <td>anisha@example.com</td>
-                  <td>Student</td>
-                  <td>Jul 02, 2026</td>
-                  <td><span class="rounded-full bg-green-100 px-3 py-1 text-[13px] font-semibold text-green-700">Active</span></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="flex items-center gap-3">
-                      <div class="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-azure to-brand font-poppins text-[14px] font-bold text-white">R</div>
-                      <span class="font-poppins font-semibold">Rabin S.</span>
-                    </div>
-                  </td>
-                  <td>rabin@example.com</td>
-                  <td>Student</td>
-                  <td>Jun 21, 2026</td>
-                  <td><span class="rounded-full bg-green-100 px-3 py-1 text-[13px] font-semibold text-green-700">Active</span></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="flex items-center gap-3">
-                      <div class="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-brand-dark to-charcoal font-poppins text-[14px] font-bold text-white">P</div>
-                      <span class="font-poppins font-semibold">Priya M.</span>
-                    </div>
-                  </td>
-                  <td>priya@example.com</td>
-                  <td>Student</td>
-                  <td>Jun 14, 2026</td>
-                  <td><span class="rounded-full bg-amber-100 px-3 py-1 text-[13px] font-semibold text-amber-700">Pending</span></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="flex items-center gap-3">
-                      <div class="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-brand-dark to-brand font-poppins text-[14px] font-bold text-white">SB</div>
-                      <span class="font-poppins font-semibold">SkillBridge Admin</span>
-                    </div>
-                  </td>
-                  <td>admin@skillbridge.com</td>
-                  <td>Admin</td>
-                  <td>May 30, 2026</td>
-                  <td><span class="rounded-full bg-avaborder px-3 py-1 text-[13px] font-semibold text-linkblue">Active</span></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
+          <!-- top opportunities -->
+          <section class="rounded-2xl border border-slate-100 bg-white p-6 shadow-[0_5px_10px_0_rgba(49,49,49,0.08)]">
+            <div class="mb-5 flex items-center justify-between">
+              <h2 class="font-poppins text-[20px] font-semibold text-darkblack">Top Opportunities</h2>
+              <a href="admin-opportunities.html" class="text-[14px] font-semibold text-linkblue transition hover:underline">View all</a>
+            </div>
+            <div class="flex flex-col gap-4">
+              <div class="flex items-center gap-3">
+                <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-brand to-brand-dark font-poppins text-[13px] font-bold text-white">1</span>
+                <div class="min-w-0 flex-1">
+                  <p class="truncate font-poppins text-[14px] font-semibold text-darkblack">Excellence Scholarship</p>
+                  <p class="text-[12px] font-medium text-darkgrey">305 registrations</p>
+                </div>
+                <span class="rounded-full bg-[#fff1d4] px-2.5 py-0.5 text-[12px] font-semibold text-[#ef9f61]">Scholarship</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-azure to-brand font-poppins text-[13px] font-bold text-white">2</span>
+                <div class="min-w-0 flex-1">
+                  <p class="truncate font-poppins text-[14px] font-semibold text-darkblack">Code for Change Hackathon</p>
+                  <p class="text-[12px] font-medium text-darkgrey">210 registrations</p>
+                </div>
+                <span class="rounded-full bg-[#e6d9ff] px-2.5 py-0.5 text-[12px] font-semibold text-[#8b34ee]">Hackathon</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-brand-dark to-charcoal font-poppins text-[13px] font-bold text-white">3</span>
+                <div class="min-w-0 flex-1">
+                  <p class="truncate font-poppins text-[14px] font-semibold text-darkblack">Web Development Bootcamp</p>
+                  <p class="text-[12px] font-medium text-darkgrey">142 registrations</p>
+                </div>
+                <span class="rounded-full bg-[#d6e4ff] px-2.5 py-0.5 text-[12px] font-semibold text-[#5b46f3]">Workshop</span>
+              </div>
+            </div>
+          </section>
+        </div>
       </main>
     </div>
 

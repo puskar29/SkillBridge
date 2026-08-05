@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/src/assets/Favicon-skillbridge.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,7 +21,7 @@
         <div class="flex items-center justify-between gap-6 px-6 py-2.5 lg:px-12">
           <a href="../../index.html" class="group flex items-center gap-1.5 transition hover:opacity-90">
             <img
-              src="/src/assets/logos/Skill-logo.svg"
+              src="/src/assets/logos/logo-skillbridge.png"
               alt="SkillBridge logo"
               class="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105 lg:h-14"
             />
@@ -30,14 +30,14 @@
             </span>
           </a>
 
-          <nav class="hidden items-center gap-4 text-[15px] font-semibold text-darkblack lg:flex lg:gap-5 xl:gap-6">
+          <nav class="hidden items-center gap-3 text-[15px] font-semibold text-darkblack lg:flex xl:gap-4 2xl:gap-5">
             <a href="../../index.html" class="nav-link">Home</a>
             <a href="opportunities.html" class="nav-link">Opportunities</a>
-            <a href="workshops.html" class="nav-link">Workshops</a>
-            <a href="internships.html" class="nav-link">Internships</a>
-            <a href="scholarships.html" class="nav-link">Scholarships</a>
             <a href="about.html" class="nav-link active">About Us</a>
             <a href="contact.html" class="nav-link">Contact</a>
+            <a href="#" class="nav-link">Blog</a>
+            <a href="#" class="nav-link">Resources</a>
+            <a href="#" class="nav-link">FAQ</a>
           </nav>
 
           <div class="flex items-center gap-2.5 xl:gap-4">
@@ -59,6 +59,12 @@
                 </svg>
               </button>
             </form>
+            <a
+              href="student-panel.html"
+              class="flex h-[44px] w-[100px] items-center justify-center rounded-full border border-brand/30 bg-brand/5 text-[14px] font-semibold text-brand transition hover:-translate-y-0.5 hover:bg-brand hover:text-white"
+            >
+              Dashboard
+            </a>
             <a
               href="login.html"
               class="flex h-[44px] w-[84px] items-center justify-center rounded-full border border-darkblack/20 text-[15px] font-semibold text-darkblack transition hover:-translate-y-0.5 hover:border-brand hover:text-brand"
@@ -82,7 +88,7 @@
               <svg id="menu-open-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-6 w-6">
                 <path d="M4 6h16M4 12h16M4 18h16" />
               </svg>
-              <svg id="menu-close-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hidden h-6 w-6">
+              <svg id="menu-close-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="is-hidden h-6 w-6">
                 <path d="M6 6l12 12M18 6L6 18" />
               </svg>
             </button>
@@ -90,15 +96,16 @@
         </div>
 
         <!-- mobile menu -->
-        <div id="mobile-menu" class="hidden border-t border-slate-100 bg-white px-6 pt-4 pb-6 lg:hidden">
+        <div id="mobile-menu" class="is-hidden border-t border-slate-100 bg-white px-6 pt-4 pb-6 lg:hidden">
           <nav class="flex flex-col gap-1 text-[15px] font-semibold text-darkblack">
             <a href="../../index.html" class="nav-link rounded-lg px-3 py-2.5">Home</a>
             <a href="opportunities.html" class="nav-link rounded-lg px-3 py-2.5">Opportunities</a>
-            <a href="workshops.html" class="nav-link rounded-lg px-3 py-2.5">Workshops</a>
-            <a href="internships.html" class="nav-link rounded-lg px-3 py-2.5">Internships</a>
-            <a href="scholarships.html" class="nav-link rounded-lg px-3 py-2.5">Scholarships</a>
             <a href="about.html" class="nav-link active rounded-lg bg-avaborder px-3 py-2.5">About Us</a>
             <a href="contact.html" class="nav-link rounded-lg px-3 py-2.5">Contact</a>
+            <a href="#" class="nav-link rounded-lg px-3 py-2.5">Blog</a>
+            <a href="#" class="nav-link rounded-lg px-3 py-2.5">Resources</a>
+            <a href="#" class="nav-link rounded-lg px-3 py-2.5">FAQ</a>
+            <a href="student-panel.html" class="nav-link rounded-lg px-3 py-2.5">Dashboard</a>
           </nav>
           <div class="mt-5 flex items-center gap-3">
             <a href="login.html" class="flex h-11 flex-1 items-center justify-center rounded-full border border-darkblack/20 text-[15px] font-semibold text-darkblack transition hover:border-brand hover:text-brand">Login</a>
@@ -535,7 +542,7 @@
           <!-- brand -->
           <div class="flex flex-col items-start gap-5">
             <a href="../../index.html" class="flex items-center gap-3">
-              <img src="/src/assets/logos/Skill-logo.svg" alt="SkillBridge logo" class="h-10 w-12 object-contain brightness-0 invert" />
+              <img src="/src/assets/logos/logo-skillbridge.png" alt="SkillBridge logo" class="h-10 w-12 object-contain brightness-0 invert" />
               <span class="font-poppins text-xl font-bold">SkillBridge</span>
             </a>
             <p class="max-w-[260px] text-[14px] leading-[170%] font-medium text-white/70">

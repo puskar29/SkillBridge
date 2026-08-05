@@ -12,6 +12,11 @@ dist
 dist-ssr
 *.local
 
+# Project documentation
+BACKEND_GUIDE.md
+BUTTONS_AND_MODALS.md
+*.txt
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

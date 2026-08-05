@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/src/assets/Favicon-skillbridge.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+    <title>SkillBridge — Settings | Student Dashboard</title>
+  </head>
+  <body class="bg-avaborder/40 font-sans text-darkblack antialiased">
+
+    <!-- sidebar -->
+    <aside id="panel-sidebar" class="fixed inset-y-0 left-0 z-50 flex w-72 -translate-x-full flex-col bg-white shadow-2xl transition-transform duration-300 lg:translate-x-0 lg:shadow-none">
+      <div class="flex items-center justify-between px-6 pt-6">
+        <a href="../../index.html" class="flex items-center gap-2">
+          <img src="/src/assets/logos/logo-skillbridge.png" alt="SkillBridge logo" class="h-10 w-auto object-contain" />
+          <span class="font-poppins text-[18px] font-bold tracking-tight">Skill<span class="text-brand-dark">Bridge</span></span>
+        </a>
+        <button
+          type="button"
+          id="sidebar-close"
+          aria-label="Close menu"
+          class="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 text-darkblack transition hover:border-brand hover:text-brand lg:hidden"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5">
+            <path d="M6 6l12 12M18 6L6 18" />
+          </svg>
+        </button>
+      </div>
+
+      <nav class="mt-8 flex flex-1 flex-col gap-1.5 px-4">
+        <a href="student-panel.html" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5"><rect x="3" y="3" width="7" height="9" rx="1.5" /><rect x="14" y="3" width="7" height="5" rx="1.5" /><rect x="14" y="12" width="7" height="9" rx="1.5" /><rect x="3" y="16" width="7" height="5" rx="1.5" /></svg>
+          Dashboard
+        </a>
+        <a href="student-opportunities.html" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4" /><circle cx="9" cy="20" r="1" /><circle cx="18" cy="20" r="1" /></svg>
+          Opportunities
+        </a>
+        <a href="student-registrations.html" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5"><path d="M9 11l3 3 8-8" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+          My Registrations
+        </a>
+        <a href="student-profile.html" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
+          My Profile
+        </a>
+        <a href="student-settings.html" class="sidebar-link active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5"><circle cx="12" cy="12" r="3" /><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.09a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h.09a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.09a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" /></svg>
+          Settings
+        </a>
+      </nav>
+
+      <div class="border-t border-slate-100 p-4">
+        <a href="login.html" class="sidebar-link text-[#e23b3b] hover:bg-red-50 hover:text-[#e23b3b]">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" /><path d="m16 17 5-5-5-5" /><path d="M21 12H9" /></svg>
+          Logout
+        </a>
+      </div>
+    </aside>
+
+    <div id="sidebar-overlay" class="fixed inset-0 z-40 is-hidden bg-darkblack/40 lg:hidden"></div>
+
+    <div class="lg:pl-72">
+      <!-- topbar -->
+      <header class="sticky top-0 z-30 border-b border-slate-100/80 bg-white/85 backdrop-blur-md">
+        <div class="flex items-center justify-between gap-4 px-6 py-3.5 lg:px-10">
+          <div class="flex items-center gap-3">
+            <button
+              type="button"
+              id="sidebar-toggle"
+              aria-label="Open menu"
+              class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-darkblack transition hover:border-brand hover:text-brand lg:hidden"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5">
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+            <div class="hidden items-center gap-2 text-[15px] font-medium text-darkgrey sm:flex">
+              <a href="student-panel.html" class="transition hover:text-brand">Dashboard</a>
+              <span>/</span>
+              <span class="text-darkblack">Settings</span>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <button type="button" aria-label="Notifications" class="relative flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-darkblack transition hover:border-brand hover:text-brand">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5">
+                <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" />
+                <path d="M13.7 21a2 2 0 0 1-3.4 0" />
+              </svg>
+              <span class="absolute top-2.5 right-2.5 h-2 w-2 rounded-full bg-brand"></span>
+            </button>
+            <div class="flex items-center gap-3">
+              <div class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-brand to-brand-dark font-poppins text-[15px] font-bold text-white">A</div>
+              <div class="hidden text-left sm:block">
+                <span class="block font-poppins text-[14px] font-semibold text-darkblack">Anisha K.</span>
+                <span class="block text-[12px] font-medium text-darkgrey">Student</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- content -->
+      <main class="px-6 py-8 lg:px-10 lg:py-10">
+        <div>
+          <h1 class="font-poppins text-[26px] font-bold tracking-tight lg:text-[32px]">
+            Account <span class="text-brand-dark">Settings</span>
+          </h1>
+          <p class="mt-1.5 text-[15px] font-medium text-darkgrey">Manage your password, notifications, and privacy preferences.</p>
+        </div>
+
+        <div class="mt-8 grid gap-8 lg:grid-cols-2">
+          <!-- security -->
+          <section class="rounded-2xl border border-slate-100 bg-white p-6 shadow-[0_5px_10px_0_rgba(49,49,49,0.08)]">
+            <h2 class="font-poppins text-[20px] font-semibold text-darkblack">Change Password</h2>
+            <p class="mt-1 text-[14px] font-medium text-darkgrey">Use at least 8 characters with a mix of letters and numbers.</p>
+
+            <div class="mt-6 flex flex-col gap-5">
+              <label class="block">
+                <span class="mb-2 block text-[14px] font-semibold text-darkblack">Current password</span>
+                <input type="password" placeholder="Enter current password" class="form-input" />
+              </label>
+              <label class="block">
+                <span class="mb-2 block text-[14px] font-semibold text-darkblack">New password</span>
+                <input type="password" placeholder="Enter new password" class="form-input" />
+              </label>
+              <label class="block">
+                <span class="mb-2 block text-[14px] font-semibold text-darkblack">Confirm new password</span>
+                <input type="password" placeholder="Re-enter new password" class="form-input" />
+              </label>
+            </div>
+
+            <div class="mt-6 flex justify-end">
+              <button type="button" class="flex h-[44px] items-center justify-center rounded-full bg-gradient-to-r from-brand to-brand-dark px-7 text-[15px] font-semibold text-white shadow-lg shadow-brand/30 transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-brand/40">
+                Update Password
+              </button>
+            </div>
+          </section>
+
+          <!-- notifications -->
+          <section class="rounded-2xl border border-slate-100 bg-white p-6 shadow-[0_5px_10px_0_rgba(49,49,49,0.08)]">
+            <h2 class="font-poppins text-[20px] font-semibold text-darkblack">Notifications</h2>
+            <p class="mt-1 text-[14px] font-medium text-darkgrey">Choose what you want to be notified about.</p>
+
+            <div class="mt-6 flex flex-col divide-y divide-slate-100">
+              <label class="flex items-center justify-between gap-4 py-4">
+                <div>
+                  <span class="block font-poppins text-[15px] font-semibold text-darkblack">New opportunities</span>
+                  <span class="block text-[13px] font-medium text-darkgrey">When new internships or events are posted</span>
+                </div>
+                <input type="checkbox" checked class="h-5 w-5 accent-brand" />
+              </label>
+              <label class="flex items-center justify-between gap-4 py-4">
+                <div>
+                  <span class="block font-poppins text-[15px] font-semibold text-darkblack">Registration updates</span>
+                  <span class="block text-[13px] font-medium text-darkgrey">Status changes on your applications</span>
+                </div>
+                <input type="checkbox" checked class="h-5 w-5 accent-brand" />
+              </label>
+              <label class="flex items-center justify-between gap-4 py-4">
+                <div>
+                  <span class="block font-poppins text-[15px] font-semibold text-darkblack">Deadline reminders</span>
+                  <span class="block text-[13px] font-medium text-darkgrey">Reminders before opportunities close</span>
+                </div>
+                <input type="checkbox" checked class="h-5 w-5 accent-brand" />
+              </label>
+              <label class="flex items-center justify-between gap-4 py-4">
+                <div>
+                  <span class="block font-poppins text-[15px] font-semibold text-darkblack">Email newsletter</span>
+                  <span class="block text-[13px] font-medium text-darkgrey">Monthly tips and career resources</span>
+                </div>
+                <input type="checkbox" class="h-5 w-5 accent-brand" />
+              </label>
+            </div>
+
+            <div class="mt-4 flex justify-end">
+              <button type="button" class="flex h-[44px] items-center justify-center rounded-full bg-gradient-to-r from-brand to-brand-dark px-7 text-[15px] font-semibold text-white shadow-lg shadow-brand/30 transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-brand/40">
+                Save Preferences
+              </button>
+            </div>
+          </section>
+        </div>
+
+        <!-- privacy -->
+        <section class="mt-8 rounded-2xl border border-slate-100 bg-white p-6 shadow-[0_5px_10px_0_rgba(49,49,49,0.08)]">
+          <h2 class="font-poppins text-[20px] font-semibold text-darkblack">Privacy</h2>
+          <p class="mt-1 text-[14px] font-medium text-darkgrey">Control who can see your profile and activity.</p>
+
+          <div class="mt-4 flex flex-col divide-y divide-slate-100">
+            <label class="flex items-center justify-between gap-4 py-4">
+              <div>
+                <span class="block font-poppins text-[15px] font-semibold text-darkblack">Make profile visible to employers</span>
+                <span class="block text-[13px] font-medium text-darkgrey">Allows companies to discover your skills and contact you</span>
+              </div>
+              <input type="checkbox" checked class="h-5 w-5 accent-brand" />
+            </label>
+            <label class="flex items-center justify-between gap-4 py-4">
+              <div>
+                <span class="block font-poppins text-[15px] font-semibold text-darkblack">Show skill points publicly</span>
+                <span class="block text-[13px] font-medium text-darkgrey">Display your SkillBridge points on your profile</span>
+              </div>
+              <input type="checkbox" checked class="h-5 w-5 accent-brand" />
+            </label>
+            <label class="flex items-center justify-between gap-4 py-4">
+              <div>
+                <span class="block font-poppins text-[15px] font-semibold text-darkblack">Share registration history</span>
+                <span class="block text-[13px] font-medium text-darkgrey">Let others see events you&rsquo;ve attended</span>
+              </div>
+              <input type="checkbox" class="h-5 w-5 accent-brand" />
+            </label>
+          </div>
+
+          <div class="mt-4 flex justify-end">
+            <button type="button" class="flex h-[44px] items-center justify-center rounded-full bg-gradient-to-r from-brand to-brand-dark px-7 text-[15px] font-semibold text-white shadow-lg shadow-brand/30 transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-brand/40">
+              Save Privacy Settings
+            </button>
+          </div>
+        </section>
+
+        <!-- danger zone -->
+        <section class="mt-8 rounded-2xl border border-[#fecaca] bg-red-50/40 p-6">
+          <h2 class="font-poppins text-[20px] font-semibold text-[#e23b3b]">Danger Zone</h2>
+          <p class="mt-1 text-[14px] font-medium text-darkgrey">These actions cannot be undone. Please be careful.</p>
+          <div class="mt-5 flex flex-col gap-4 sm:flex-row">
+            <button type="button" class="flex h-[44px] items-center justify-center gap-2 rounded-full border border-[#e23b3b]/40 px-6 text-[14px] font-semibold text-[#e23b3b] transition hover:bg-red-50">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-4.5 w-4.5"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" /></svg>
+              Deactivate Account
+            </button>
+            <button type="button" class="flex h-[44px] items-center justify-center gap-2 rounded-full border border-[#e23b3b]/40 px-6 text-[14px] font-semibold text-[#e23b3b] transition hover:bg-red-50">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-4.5 w-4.5"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" /><path d="m16 17 5-5-5-5" /><path d="M21 12H9" /></svg>
+              Delete Account
+            </button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
